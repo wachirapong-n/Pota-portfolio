@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// @ts-expect-error CSS side-effect imports are handled by Next.js.
 import "./globals.css";
 import { SiteLayout } from "@/components/layout/site-layout";
 import { Noto_Sans_Thai } from "next/font/google";
