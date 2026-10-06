@@ -1,16 +1,137 @@
 export type Project = {
-  slug: string; title: string; description: string; category: string; technologies: string[]; image: string;
-  overview: string; problem?: string; solution?: string; features?: string[]; role?: string; challenges?: string; outcome?: string;
-  github?: string; demo?: string;
+  slug: string;
+  number: string;
+  title: string;
+  description: string;
+  image?: string;
+  category: string;
+  tools: string[];
+  projectType: string;
+  learning: string;
+  video?: string;
+  gallery?: string[];
+  role: string;
 };
 
 export const projects: Project[] = [
-  { slug: "campus-compass", title: "Campus Compass", category: "Web application", description: "A student-focused directory that makes campus services easier to discover.", technologies: ["Next.js", "TypeScript", "Tailwind CSS"], image: "", overview: "A clear, searchable home for the places and services students need every day.", problem: "Campus information can be spread across disconnected pages and documents.", solution: "I designed a compact directory around common student tasks and clear location details.", features: ["Searchable campus services", "Responsive directory cards", "Accessible navigation"], role: "Product design and frontend development", challenges: "Organizing many information types without making the interface feel dense.", outcome: "A focused prototype ready for usability feedback.", github: "https://github.com/" },
-  { slug: "studio-notes", title: "Studio Notes", category: "Productivity", description: "A calm workspace for collecting ideas, references, and project notes.", technologies: ["React", "TypeScript", "CSS"], image: "", overview: "An editorial-style notes concept built around quick capture and easy review.", features: ["Topic-based note organization", "Focused reading layout", "Responsive interface"], role: "Frontend development", github: "https://github.com/" },
-  { slug: "fieldwork", title: "Fieldwork", category: "Data visualization", description: "A lightweight dashboard for exploring local environmental observations.", technologies: ["React", "JavaScript", "Chart.js"], image: "", overview: "A dashboard concept that makes community observations easier to scan and compare.", features: ["Trend summaries", "Category filters", "Mobile-friendly charts"], role: "Interface design and prototyping", github: "https://github.com/" },
-  { slug: "good-neighbor", title: "Good Neighbor", category: "Community", description: "A community board connecting volunteers with nearby initiatives.", technologies: ["Next.js", "React", "CSS"], image: "", overview: "A friendly listing experience for local volunteering opportunities.", features: ["Opportunity listings", "Clear time and location details", "Simple interest flow"], role: "Frontend development", github: "https://github.com/" },
-  { slug: "folio-kit", title: "Folio Kit", category: "Design system", description: "A small component library for consistent student project sites.", technologies: ["TypeScript", "React", "Storybook"], image: "", overview: "A practical set of reusable interface patterns for small web projects.", features: ["Reusable components", "Consistent type scale", "Keyboard-friendly controls"], role: "Component design and development", github: "https://github.com/" },
-  { slug: "table-talk", title: "Table Talk", category: "Web application", description: "A menu and reservation concept for independent neighborhood cafés.", technologies: ["Next.js", "TypeScript", "Tailwind CSS"], image: "", overview: "A simple café experience that brings menu discovery and booking together.", features: ["Menu browsing", "Reservation form concept", "Responsive layout"], role: "Design and frontend development", github: "https://github.com/" },
-  { slug: "open-study", title: "Open Study", category: "Education", description: "A study planner that turns a busy week into manageable sessions.", technologies: ["React", "JavaScript", "CSS"], image: "", overview: "A study planning concept for creating realistic, focused sessions.", features: ["Weekly plan view", "Session progress", "Clear empty states"], role: "Frontend development", github: "https://github.com/" },
-  { slug: "little-museum", title: "Little Museum", category: "Interactive", description: "A digital exhibit exploring stories behind everyday objects.", technologies: ["Next.js", "TypeScript", "Motion"], image: "", overview: "A small editorial experience that pairs object photography with short stories.", features: ["Curated story pages", "Subtle transitions", "Accessible reading experience"], role: "Creative development", github: "https://github.com/" },
+  {
+    slug: "chatgpt-guide",
+    number: "01",
+    title: "Infographic — ChatGPT Guide",
+    description:
+      "อินโฟกราฟิกแนะนำการใช้งาน ChatGPT เพื่อทำความรู้จักเครื่องมือ AI และแนวทางการใช้งานอย่างเหมาะสม",
+    image: "/projects/chatgpt-guide.png",
+    category: "Infographic",
+    tools: ["ChatGPT"],
+    projectType: "Infographic",
+    learning:
+      "เรียนรู้การใช้งาน ChatGPT และการเขียน Prompt ให้ได้ผลลัพธ์ตรงตามต้องการ",
+    role: "ออกแบบและจัดทำอินโฟกราฟิก",
+  },
+
+  {
+    slug: "behaviorism",
+    number: "02",
+    title: "Infographic — พฤติกรรมนิยม",
+    description:
+      "อินโฟกราฟิกสรุปสาระสำคัญของทฤษฎีพฤติกรรมนิยม พร้อมเรียบเรียงเนื้อหาให้อยู่ในรูปแบบที่เข้าใจง่าย",
+    image: "/projects/behaviorism.png",
+    category: "Infographic",
+    tools: [],
+    projectType: "Infographic",
+    learning:
+      "เรียนรู้การวิเคราะห์และสรุปสาระสำคัญ พร้อมนำเสนอข้อมูลให้เข้าใจง่าย",
+    role: "วิเคราะห์ สรุปเนื้อหา และออกแบบอินโฟกราฟิก",
+  },
+
+  {
+    slug: "learning-theories",
+    number: "03",
+    title: "Infographic — Learning Theories",
+    description:
+      "สรุปทฤษฎีการเรียนรู้ผ่าน NotebookLM โดยนำเทคโนโลยี AI มาช่วยในการศึกษาและจัดระบบเนื้อหา",
+    image: "/projects/learning-theories.png",
+    category: "Infographic",
+    tools: ["NotebookLM"],
+    projectType: "Infographic",
+    learning:
+      "เรียนรู้การใช้ NotebookLM เพื่อช่วยค้นคว้า สรุป และจัดระบบข้อมูล",
+    role: "ค้นคว้า วิเคราะห์ และจัดทำสรุปเนื้อหา",
+  },
+
+  {
+    slug: "explore-ar-vr-with-quiver",
+    number: "04",
+    title: "Video — Explore AR/VR with Quiver",
+    description:
+      "วิดีโอแนะนำการใช้งานแอปพลิเคชัน Quiver ที่เปลี่ยนภาพระบายสี 2 มิติให้กลายเป็นโมเดล 3 มิติ สร้างประสบการณ์การเรียนรู้ผ่านเทคโนโลยี AR",
+    image: "/projects/quiver.png",
+    video: "/projects/quiver.mp4",
+    category: "Video",
+    tools: ["Quiver"],
+    projectType: "Educational Video",
+    learning:
+      "เรียนรู้การประยุกต์ใช้ AR เพื่อสร้างสื่อและประสบการณ์การเรียนรู้ที่น่าสนใจ",
+    role: "จัดทำวิดีโอแนะนำการใช้งาน",
+  },
+
+  {
+    slug: "indy-and-sompoy-amazon",
+    number: "05",
+    title: "Story Book — อินดี้กับส้มป่อยผจญภัยในป่าอเมซอน",
+    description:
+      "หนังสือนิทานภาพสำหรับเด็กที่สร้างสรรค์ด้วย Gemini ถ่ายทอดเรื่องราวการผจญภัยของ “อินดี้” และ “ส้มป่อย” ผ่านโลกแห่งจินตนาการ",
+    image: "/projects/indy-sompoy.png",
+    category: "Story Book",
+    tools: ["Gemini"],
+    projectType: "Story Book",
+    learning:
+      "เรียนรู้การใช้ Gemini สร้างสรรค์นิทาน ตัวละคร และภาพประกอบสำหรับเด็ก",
+    role: "สร้างสรรค์เนื้อเรื่อง ตัวละคร และภาพประกอบ",
+  },
+
+  {
+    slug: "nathi-khong-noo",
+    number: "06",
+    title: "EdTech Innovation — หน้าที่ของหนู ต้องรู้ให้ดี",
+    description:
+      "แอปพลิเคชันสื่อการเรียนรู้รายวิชาหน้าที่พลเมือง ระดับชั้นประถมศึกษาปีที่ 1 ประกอบด้วยวิดีโอการเรียนรู้และเกมตอบคำถามเพื่อทบทวนความรู้และสะสมคะแนน โดยมุ่งส่งเสริมการเรียนรู้เชิงรุก (Active Learning)",
+    image: "/projects/nathi-khong-noo.png",
+    category: "EdTech Innovation",
+    tools: [],
+    projectType: "Web Application",
+    learning: "เรียนรู้การพัฒนาเว็บแอปพลิเคชันเพื่อการศึกษา และการปรับแก้โค้ด",
+    role: "จัดทำเว็บแอปพลิเคชันและปรับแก้โค้ดให้มีประสิทธิภาพ",
+  },
+
+  {
+    slug: "google-vids",
+    number: "07",
+    title: "AI Video Production — Google Vids",
+    description:
+      "วิดีโอการสอนเรื่อง การเก็บของเล่น สำหรับเด็กระดับปฐมวัย โดยใช้ Google Vids เป็นเครื่องมือในการผลิตสื่อการเรียนรู้",
+    image: "/projects/google-vids.png",
+    video: "/projects/google-vids.mp4",
+    category: "AI Video Production",
+    tools: ["Google Vids"],
+    projectType: "Educational Video",
+    learning: "เรียนรู้การใช้ AI ช่วยสร้างวิดีโอการสอนให้เหมาะสมกับผู้เรียน",
+    role: "จัดทำวิดีโอการสอน",
+  },
+
+  {
+    slug: "rajapruek-educational-film",
+    number: "08",
+    title: "Short Educational Film — สวนราชพฤกษ์",
+    description:
+      "ภาพยนตร์สั้นเพื่อการศึกษาในหัวข้อการเชิญชวนท่องเที่ยวสวนราชพฤกษ์",
+    image: "/projects/rajapruek.png",
+    video: "/projects/rajapruek.mp4",
+    category: "Short Educational Film",
+    tools: [],
+    projectType: "Short Film",
+    learning:
+      "เรียนรู้การออกแบบ Storyboard การเขียนสคริปต์ และการทำงานร่วมกับผู้อื่น",
+    role: "ออกแบบ Storyboard และเขียนสคริปต์สำหรับการพากย์",
+  },
 ];

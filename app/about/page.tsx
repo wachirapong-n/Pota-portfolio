@@ -3,12 +3,39 @@ import { BriefcaseBusiness } from "lucide-react";
 import { profile } from "@/data/profile";
 import { skillGroups } from "@/data/skills";
 import { experiences } from "@/data/experience";
+
 export const metadata: Metadata = { title: "About" };
-export default function AboutPage() { return <>
- <section className="page-top"><div className="shell"><div className="eyebrow">A little context</div><h1>About me</h1><p className="muted" style={{ maxWidth: 590, margin: 0 }}>The person behind the projects: what I’m learning, what I care about, and where I hope to go next.</p></div></section>
- <section className="section"><div className="shell about-grid" style={{ display: "grid", gridTemplateColumns: ".8fr 1.2fr", gap: 72 }}><div><div className="eyebrow">Introduction</div><h2 className="section-title">Curious by nature.<br/>Developer by practice.</h2></div><div><p className="muted" style={{ fontSize: 16, marginTop: 0 }}>{profile.bio}</p><p className="muted">I’m currently studying {profile.education.faculty.toLowerCase()} at {profile.education.institution}. I’m especially interested in {profile.interests.join(", ").toLowerCase()}, and I’m working toward a career where I can help shape products from early ideas through polished, accessible interfaces.</p><p className="muted">My goal is to join a thoughtful team, contribute with curiosity and care, and keep building the technical judgment that comes from solving real problems.</p><div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 22 }}>{profile.interests.map(i=><span key={i} className="tag">{i}</span>)}</div></div></div></section>
- <section style={{ background: "var(--mist)", paddingBlock: 82 }}><div className="shell"><div className="eyebrow">Learning path</div><h2 className="section-title">Education</h2><div style={{ marginTop: 30, borderLeft: "1px solid #bac8d8", paddingLeft: 26, position: "relative", maxWidth: 720 }}><span style={{ width: 11, height: 11, borderRadius: "50%", background: "var(--blue)", position: "absolute", left: -6, top: 5 }}/><div style={{ display: "flex", justifyContent: "space-between", gap: 18, flexWrap: "wrap" }}><div><div style={{ fontSize: 19, fontWeight: 700 }}>{profile.education.institution}</div><div className="muted" style={{ marginTop: 6 }}>{profile.education.faculty}</div><div className="muted" style={{ fontSize: 13, marginTop: 8 }}>{profile.education.note}</div></div><div style={{ textAlign: "right", color: "var(--blue)", fontSize: 12, fontWeight: 700 }}>{profile.education.period}<div style={{ color: "var(--muted)", fontWeight: 400, marginTop: 6 }}>{profile.education.location}</div></div></div></div></div></section>
- <section className="section"><div className="shell"><div className="eyebrow">What I’m learning</div><h2 className="section-title">Skills & tools</h2><p className="muted" style={{ marginTop: 0, maxWidth: 540 }}>Starter content: review these example skills and keep only the tools you can confidently discuss.</p><div className="skill-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 28, marginTop: 36 }}>{skillGroups.map(g=><div key={g.name}><h3 style={{ fontSize: 13, margin: "0 0 15px", display: "flex", alignItems: "center", gap: 9 }}><span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--blue)" }}/>{g.name}</h3><div style={{ display: "grid", gap: 10 }}>{g.skills.map(s=><div key={s} style={{ borderBottom: "1px solid var(--line)", paddingBottom: 9, fontSize: 13, color: "#526277" }}>{s}</div>)}</div></div>)}</div></div></section>
- <section style={{ background: "var(--mist)", paddingBlock: 82 }}><div className="shell"><div className="eyebrow">Where I’ve contributed</div><h2 className="section-title">Experience</h2><div style={{ marginTop: 28, display: "grid", gap: 24 }}>{experiences.map((e,i)=><article key={i} className="experience-item" style={{ display: "grid", gridTemplateColumns: "190px 1fr", gap: 26, borderTop: "1px solid var(--line)", paddingTop: 23 }}><div style={{ color: "var(--blue)", fontSize: 12, fontWeight: 700 }}>{e.date}</div><div><div style={{ display: "flex", gap: 9, alignItems: "center" }}><BriefcaseBusiness size={16} color="var(--blue)"/><h3 style={{ margin: 0, fontSize: 18 }}>{e.role}</h3></div><div className="muted" style={{ fontSize: 13, marginTop: 6 }}>{e.organization}</div><p className="muted" style={{ fontSize: 13 }}>{e.description}</p><ul className="muted" style={{ fontSize: 13, paddingLeft: 18 }}>{e.responsibilities.map(r=><li key={r} style={{ marginBottom: 5 }}>{r}</li>)}</ul><div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>{e.technologies.map(t=><span className="tag" key={t}>{t}</span>)}</div></div></article>)}</div></div></section>
- 
- </>; }
+const container = "mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]";
+const eyebrow = "text-[11px] font-bold uppercase tracking-[.16em] text-primary";
+const title = "mt-3 mb-3 text-[clamp(30px,4vw,42px)] font-bold tracking-[-.04em]";
+
+export default function AboutPage() {
+  return <>
+    <section className="bg-mist py-[76px] max-md:pt-[54px]"><div className={container}><div className={eyebrow}>A little context</div><h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">About me</h1><p className="max-w-[590px] text-[15px] leading-7 text-muted">The person behind the projects: what I’m learning, what I care about, and where I hope to go next.</p></div></section>
+
+    <section className="py-[100px] max-md:py-[72px]"><div className={`${container} grid grid-cols-[.8fr_1.2fr] gap-[72px] max-md:grid-cols-1 max-md:gap-4`}>
+      <div><div className={eyebrow}>Introduction</div><h2 className={title}>Curious by nature.<br/>Developer by practice.</h2></div>
+      <div><p className="mt-0 text-base leading-7 text-muted">{profile.bio}</p><p className="leading-7 text-muted">I’m currently studying {profile.education.faculty.toLowerCase()} at {profile.education.institution}. I’m especially interested in {profile.interests.join(", ").toLowerCase()}, and I’m working toward a career where I can help shape products from early ideas through polished, accessible interfaces.</p><p className="leading-7 text-muted">My goal is to join a thoughtful team, contribute with curiosity and care, and keep building the technical judgment that comes from solving real problems.</p><div className="mt-6 flex flex-wrap gap-2">{profile.interests.map(interest => <span key={interest} className="rounded-sm bg-slate-100 px-2.5 py-1.5 text-xs font-semibold text-slate-600">{interest}</span>)}</div></div>
+    </div></section>
+
+    <section className="bg-mist py-[82px]"><div className={container}><div className={eyebrow}>Learning path</div><h2 className={title}>Education</h2>
+      <div className="relative mt-8 max-w-[720px] border-l border-slate-300 pl-7"><span className="absolute -left-1.5 top-1.5 size-3 rounded-full bg-primary"/><div className="flex flex-wrap justify-between gap-5">
+        <div><div className="text-[19px] font-bold">{profile.education.institution}</div><div className="mt-1.5 text-sm text-muted">{profile.education.faculty}</div><div className="mt-2 text-[13px] leading-6 text-muted">{profile.education.note}</div></div>
+        <div className="text-left text-xs font-bold text-primary sm:text-right">{profile.education.period}<div className="mt-1.5 font-normal text-muted">{profile.education.location}</div></div>
+      </div></div>
+    </div></section>
+
+    <section className="py-[100px] max-md:py-[72px]"><div className={container}><div className={eyebrow}>What I’m learning</div><h2 className={title}>Skills & tools</h2><p className="mt-0 max-w-[540px] text-[13px] leading-6 text-muted">Starter content: review these example skills and keep only the tools you can confidently discuss.</p>
+      <div className="mt-9 grid grid-cols-4 gap-7 max-md:grid-cols-2 max-md:gap-y-7">
+        {skillGroups.map(group => <div key={group.name}><h3 className="mb-4 flex items-center gap-2.5 text-[13px] font-bold"><span className="size-1.5 rounded-full bg-primary"/>{group.name}</h3><div className="grid gap-2.5">{group.skills.map(skill => <div key={skill} className="border-b border-line pb-2.5 text-[13px] text-slate-600">{skill}</div>)}</div></div>)}
+      </div>
+    </div></section>
+
+    <section className="bg-mist py-[82px]"><div className={container}><div className={eyebrow}>Where I’ve contributed</div><h2 className={title}>Experience</h2>
+      <div className="mt-7 grid gap-6">{experiences.map((experience, index) => <article key={`${experience.organization}-${index}`} className="grid grid-cols-[190px_1fr] gap-[26px] border-t border-line pt-6 max-sm:grid-cols-1 max-sm:gap-2">
+        <div className="text-xs font-bold text-primary">{experience.date}</div>
+        <div><div className="flex items-center gap-2"><BriefcaseBusiness size={16} className="text-primary"/><h3 className="m-0 text-lg font-semibold">{experience.role}</h3></div><div className="mt-1.5 text-[13px] text-muted">{experience.organization}</div><p className="text-[13px] leading-6 text-muted">{experience.description}</p><ul className="list-disc pl-5 text-[13px] leading-6 text-muted">{experience.responsibilities.map(item => <li key={item} className="mb-1">{item}</li>)}</ul><div className="flex flex-wrap gap-2">{experience.technologies.map(technology => <span className="rounded-sm bg-white px-2 py-1.5 text-[11px] font-semibold text-slate-600" key={technology}>{technology}</span>)}</div></div>
+      </article>)}</div>
+    </div></section>
+  </>;
+}

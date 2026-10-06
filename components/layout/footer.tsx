@@ -1,4 +1,18 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/profile";
-export function Footer() { return <footer style={{ background: "var(--ink)", color: "white", padding: "48px 0 24px" }}><div className="shell"><div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: 36, paddingBottom: 36 }}><div style={{ maxWidth: 330 }}><div style={{ fontWeight: 700, fontSize: 18 }}>{profile.name}</div><p style={{ color: "#b5c2d0", lineHeight: 1.7, fontSize: 13 }}>Computer science student building useful, thoughtful digital experiences.</p></div><nav aria-label="Footer navigation" style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start" }}>{["/", "/about", "/works", "/contact"].map((href, i) => <Link key={href} href={href} style={{ color: "#d1dae4", fontSize: 13 }}>{["Home", "About", "Works", "Contact"][i]}</Link>)}</nav><div style={{ display: "flex", gap: 18 }}>{profile.socials.map(s => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={`${s.label} (opens in new tab)`} style={{ color: "#d1dae4", fontSize: 13, display: "flex", gap: 4, alignItems: "center" }}>{s.label}<ArrowUpRight size={13}/></a>)}</div></div><div style={{ borderTop: "1px solid #30445a", paddingTop: 18, color: "#9cabbc", fontSize: 11, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}><span>© {new Date().getFullYear()} {profile.name}. All rights reserved.</span><span>Designed with intention.</span></div></div></footer>; }
+
+const links = [{ href: "/", label: "Home" }, { href: "/about", label: "About" }, { href: "/works", label: "Works" }, { href: "/contact", label: "Contact" }];
+
+export function Footer() {
+  return <footer className="bg-ink py-12 text-white">
+    <div className="mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
+      <div className="flex flex-wrap justify-between gap-9 pb-9">
+        <div className="max-w-[330px]"><div className="text-lg font-bold">{profile.name}</div><p className="mt-2 text-[13px] leading-7 text-slate-300">Computer science student building useful, thoughtful digital experiences.</p></div>
+        <nav aria-label="Footer navigation" className="flex flex-wrap items-start gap-6">{links.map(link => <Link key={link.href} href={link.href} className="text-[13px] text-slate-200 transition-colors hover:text-white">{link.label}</Link>)}</nav>
+        <div className="flex gap-5">{profile.socials.map(social => <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`${social.label} (opens in new tab)`} className="flex items-center gap-1 text-[13px] text-slate-200 transition-colors hover:text-white">{social.label}<ArrowUpRight size={13}/></a>)}</div>
+      </div>
+      <div className="flex flex-wrap justify-between gap-2 border-t border-slate-600 pt-5 text-[11px] text-slate-400"><span>© {new Date().getFullYear()} {profile.name}. All rights reserved.</span><span>Designed with intention.</span></div>
+    </div>
+  </footer>;
+}

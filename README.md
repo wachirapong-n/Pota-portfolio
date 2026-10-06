@@ -19,6 +19,7 @@ This workspace began empty, so the included content is editable starter material
 - `data/skills.ts` — remove tools you do not use
 - `data/experience.ts` — replace the sample experience or use an empty array
 - `data/projects.ts` — replace all eight sample case studies with your own projects and links
+- `tailwind.config.ts` — edit the shared `primary` color token (`#01153e`)
 
 Replace the initials portrait with a real local image in `app/page.tsx` and replace the CSS project previews with screenshots in `components/works/project-card.tsx` and `app/works/[slug]/page.tsx`.
 

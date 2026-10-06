@@ -1,4 +1,61 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/projects";
-export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) { return <Link href={`/works/${project.slug}`} className="card" style={{ overflow: "hidden", display: "block", color: "inherit" }}><div aria-label={`${project.title} project preview placeholder`} style={{ aspectRatio: "1.62", background: index % 3 === 0 ? "#e9eef6" : index % 3 === 1 ? "#eef2f5" : "#e8edf2", display: "grid", placeItems: "center", position: "relative", overflow: "hidden" }}><span style={{ position: "absolute", inset: "14% 13%", border: "1px solid #b8c7d9", background: "linear-gradient(135deg,#fff 0%,#f7f9fc 70%)", boxShadow: "0 12px 30px #18365312", display: "grid", placeItems: "center" }}><span style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".16em", color: "#526782" }}>{project.title.toUpperCase()}</span></span><span style={{ position: "absolute", left: 16, top: 15, color: "#566981", fontSize: 10, fontWeight: 700, letterSpacing: ".12em" }}>PROJECT {String(index + 1).padStart(2,"0")}</span></div><div style={{ padding: "20px 20px 22px" }}><div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: ".14em", color: "var(--blue)", fontWeight: 700 }}>{project.category}</div><div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 9 }}><h2 style={{ fontSize: 20, margin: 0, letterSpacing: "-.03em" }}>{project.title}</h2><ArrowUpRight size={18}/></div><p className="muted" style={{ fontSize: 13, margin: "9px 0 15px" }}>{project.description}</p><div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{project.technologies.slice(0,3).map(t=><span className="tag" key={t}>{t}</span>)}</div></div></Link>; }
+
+const previewColors = ["bg-slate-100", "bg-slate-200/70", "bg-slate-100"];
+
+export function ProjectCard({
+  project,
+  index = 0,
+}: {
+  project: Project;
+  index?: number;
+}) {
+  return (
+    <Link
+      href={`/works/${project.slug}`}
+      className="group block overflow-hidden rounded-md border border-line bg-white text-ink transition duration-200 hover:-translate-y-1 hover:border-slate-400"
+    >
+      <div
+        aria-label={`${project.title} project preview placeholder`}
+        className={`relative grid aspect-[1.62] place-items-center overflow-hidden ${previewColors[index % previewColors.length]}`}
+      >
+        <span className="absolute inset-[14%_13%] grid place-items-center border border-slate-300 bg-gradient-to-br from-white to-slate-50 shadow-xl shadow-slate-900/5 transition-transform duration-300 group-hover:scale-[1.02]">
+          <span className="text-center text-xs font-bold tracking-[.16em] text-slate-600">
+            {project.title.toUpperCase()}
+          </span>
+        </span>
+        <span className="absolute left-4 top-4 text-[10px] font-bold tracking-[.12em] text-slate-600">
+          {project.image ? "Preview" : "No preview"}
+        </span>
+      </div>
+      <div className="p-5 pb-[22px]">
+        <div className="text-[10px] font-bold uppercase tracking-[.14em] text-primary">
+          {project.category}
+        </div>
+        <div className="mt-2 flex items-center justify-between">
+          <h2 className="text-xl font-semibold tracking-tight">
+            {project.title}
+          </h2>
+          <ArrowUpRight
+            size={18}
+            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </div>
+        <p className="mt-2 mb-4 text-[13px] leading-6 text-muted">
+          {project.description}
+        </p>
+        {/* <div className="flex flex-wrap gap-2">
+          {project.technologies.slice(0, 3).map((tech) => (
+            <span
+              className="rounded-sm bg-slate-100 px-2 py-1.5 text-[11px] font-semibold text-slate-600"
+              key={tech}
+            >
+              {tech}
+            </span>
+          ))}
+        </div> */}
+      </div>
+    </Link>
+  );
+}
