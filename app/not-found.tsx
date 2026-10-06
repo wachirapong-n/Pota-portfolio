@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <section className="section shell" style={{ minHeight: "55vh", display: "grid", alignContent: "center" }}><div className="eyebrow">404 · Page not found</div><h1 className="section-title">This page isn’t here.</h1><p className="muted">The link may be out of date. Head back to the portfolio and explore from there.</p><Link href="/works" className="btn btn-primary" style={{ justifySelf: "start", marginTop: 14 }}>Browse projects</Link></section>; }
