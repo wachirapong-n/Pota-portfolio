@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="bg-ink py-12 text-white">
       <div className="mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
         <div className="flex flex-wrap justify-between gap-9 pb-9">
-          <div className="max-w-[400px]">
+          <div className="max-w-[800px]">
             <div className="text-2xl font-bold">{profile.name}</div>
             <p className="mt-2 text-[21px] leading-7 text-slate-300">
               “เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
@@ -39,7 +39,7 @@ export function Footer() {
           <span>
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </span>
-          <span>Designed with intention.</span>
+
         </div>
       </div>
     </footer>
