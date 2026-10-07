@@ -11,11 +11,11 @@ import {
   Shapes,
   Tag,
   Wrench,
-  Sparkles,
 } from "lucide-react";
 import { projects } from "@/data/projects";
 import ProjectMediaGallery from "@/components/works/project-media-gallery";
 import ScrollReveal from "@/components/about/scroll-reveal";
+import SectionLabel from "@/components/shared/section-label";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -117,9 +117,9 @@ export default async function ProjectDetail({
             >
               <ArrowLeft size={18} aria-hidden="true" /> กลับไปหน้าผลงาน
             </Link>
-            <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold uppercase tracking-[.14em] text-primary shadow-sm">
-              <Sparkles size={18} aria-hidden="true" /> {project.category}
-            </div>
+            <SectionLabel className="mb-4 uppercase tracking-[.14em]">
+              {project.category}
+            </SectionLabel>
             <h1 className="mb-4 max-w-[1080px] text-[clamp(36px,6vw,62px)] font-bold leading-tight tracking-[-.04em]">
               <span className="mr-3 text-primary">{project.number} | </span>
               {project.title}

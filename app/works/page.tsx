@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/works/project-card";
 import ScrollReveal from "@/components/about/scroll-reveal";
-import { Sparkles } from "lucide-react";
+import SectionLabel from "@/components/shared/section-label";
 
 export const metadata: Metadata = {
   title: "Works",
@@ -20,9 +20,7 @@ export default function WorksPage() {
         />
         <div className={`${container} relative`}>
           <ScrollReveal direction="left">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[.16em] text-primary shadow-sm">
-              <Sparkles size={18} aria-hidden="true" /> SELECTED WORK
-            </p>
+            <SectionLabel className="mb-5">SELECTED WORK</SectionLabel>
             <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold leading-tight tracking-[-.05em]">
               My <span className="mt-1  text-primary"> Works</span>
             </h1>

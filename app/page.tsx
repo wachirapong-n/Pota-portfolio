@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, User, Layers3, Mail, Sparkles, Heart } from "lucide-react";
+import { ArrowRight, User, Layers3, Mail, Heart } from "lucide-react";
 import { profile } from "@/data/profile";
 import { previewProjects, projects } from "@/data/projects";
 import { ProjectCard } from "@/components/works/project-card";
 import Image from "next/image";
 import ScrollReveal from "@/components/about/scroll-reveal";
+import SectionLabel from "@/components/shared/section-label";
 
 const paths = [
   {
@@ -49,9 +50,7 @@ export default function Home() {
           className={`${container} relative grid min-h-[570px] grid-cols-[1.15fr_.85fr] items-center gap-[60px] py-[76px] max-md:grid-cols-1 max-md:gap-12 max-md:py-14`}
         >
           <ScrollReveal direction="left">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[.16em] text-primary shadow-sm">
-              <Sparkles size={18} aria-hidden="true" /> WELCOME
-            </p>
+            <SectionLabel>WELCOME</SectionLabel>
             <h1 className="mt-6 text-[clamp(42px,7vw,76px)] font-bold leading-[1.1] tracking-[-.055em]">
               E-Portfolio
               <br />

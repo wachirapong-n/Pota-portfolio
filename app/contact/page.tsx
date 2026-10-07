@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { ExternalLink, MapPin, Sparkles } from "lucide-react";
+import { ExternalLink, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
 import { ContactForm } from "@/components/contact/contact-form";
 import ScrollReveal from "@/components/about/scroll-reveal";
 import DecoratedImage from "@/components/shared/decorated-image";
+import SectionLabel from "@/components/shared/section-label";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -17,9 +18,7 @@ export default function ContactPage() {
       <section className="bg-mist py-[76px] max-md:pt-[54px]">
         <div className={container}>
           <ScrollReveal direction="left">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 uppercase bg-white px-4 py-2 text-xl font-bold tracking-[.16em] text-primary shadow-sm">
-              <Sparkles size={18} aria-hidden="true" /> Start a conversation
-            </p>
+            <SectionLabel className="mb-5 uppercase">Start a conversation</SectionLabel>
             <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">
               Contact <span className="mt-1  text-primary"> Me</span>
             </h1>
