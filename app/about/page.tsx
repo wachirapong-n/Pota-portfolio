@@ -9,6 +9,7 @@ import ScrollReveal from "@/components/about/scroll-reveal";
 import AboutGrid from "@/components/about/about-grid";
 import DecoratedImage from "@/components/shared/decorated-image";
 import SectionLabel from "@/components/shared/section-label";
+import DrawOnViewImage from "@/components/shared/draw-on-view-image";
 
 export default function AboutPage() {
   return (
@@ -97,13 +98,30 @@ export default function AboutPage() {
       </section>
 
       <section className="py-20 md:py-24 bg-mist">
-        <AboutGrid title="ความสนใจ" items={gridItemsInterested} />
+        <AboutGrid
+          title="ความสนใจ"
+          items={gridItemsInterested}
+          variant="interest"
+        />
       </section>
       <section className=" py-20 md:py-24">
-        <AboutGrid title="ทักษะของฉัน" items={gridItemsISkill} />
+        <AboutGrid
+          title="ทักษะของฉัน"
+          items={gridItemsISkill}
+          variant="skills"
+        />
       </section>
-      <section className="py-20 md:py-28 bg-mist">
-        <div className="mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
+      <section className="relative overflow-hidden bg-mist py-20 md:py-28">
+        <DrawOnViewImage
+          src="/images/arrows/vector-curve.png"
+          alt=""
+          aria-hidden="true"
+          width={400}
+          height={400}
+          revealDirection="left-to-right"
+          className="pointer-events-none absolute bottom-0 left-[-160px] z-0 hidden h-[400px] w-[400px] -scale-x-100 object-contain object-bottom xl:block"
+        />
+        <div className="relative z-10 mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
           <ScrollReveal direction="left">
             <div className="relative overflow-hidden rounded-[2rem] bg-ink px-7 py-10 text-white md:px-14 md:py-14">
               <div
