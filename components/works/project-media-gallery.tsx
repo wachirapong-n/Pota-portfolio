@@ -135,7 +135,7 @@ export default function ProjectMediaGallery({
             </>
           ) : (
             <div className="flex flex-col items-center gap-3 px-6 text-center text-slate-500">
-              <Play size={32} aria-hidden="true" />
+              <Play size={36} aria-hidden="true" />
               <span className="text-[22px]">ยังไม่มีภาพหรือวิดีโอผลงาน</span>
             </div>
           )}
@@ -155,7 +155,7 @@ export default function ProjectMediaGallery({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
             >
-              <ExternalLink size={18} aria-hidden="true" /> เปิดผลงาน
+            <ExternalLink size={20} aria-hidden="true" /> เปิดผลงาน
             </a>
           ) : hasImages ? (
             <button
@@ -163,7 +163,7 @@ export default function ProjectMediaGallery({
               onClick={() => openLightbox(currentIndex)}
               className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary transition-colors hover:text-ink"
             >
-              <ZoomIn size={18} aria-hidden="true" /> กดดูรูปภาพเต็ม
+            <ZoomIn size={20} aria-hidden="true" /> กดดูรูปภาพเต็ม
             </button>
           ) : video ? (
             <a
@@ -173,9 +173,9 @@ export default function ProjectMediaGallery({
               className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
             >
               {youtubeEmbed ? (
-                <Play size={17} aria-hidden="true" />
+              <Play size={20} aria-hidden="true" />
               ) : (
-                <ExternalLink size={17} aria-hidden="true" />
+              <ExternalLink size={20} aria-hidden="true" />
               )}
               {youtubeEmbed ? "ลิงก์วิดีโอ YouTube" : "เปิดวิดีโอผลงาน"}
             </a>

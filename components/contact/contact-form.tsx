@@ -71,7 +71,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit(submit)} noValidate className="grid gap-5">
       <div className="flex gap-3 rounded-xl bg-slate-50 p-4 text-xl leading-7 text-slate-600">
-        <Info size={21} className="mt-1 shrink-0" aria-hidden="true" />
+        <Info size={24} className="mt-1 shrink-0" aria-hidden="true" />
         ข้อความจะถูกส่งไปยังอีเมลของเจ้าของเว็บไซต์เพื่อใช้ตอบกลับ
       </div>
 
@@ -124,7 +124,7 @@ export function ContactForm() {
         className="inline-flex min-h-14 items-center justify-center gap-2 justify-self-start rounded-lg bg-primary px-6 text-[22px] font-semibold text-white transition hover:bg-primary/90 disabled:cursor-wait disabled:opacity-75"
       >
         {isSubmitting ? "กำลังส่งข้อความ…" : "ส่งข้อความ"}
-        <Send size={19} aria-hidden="true" />
+        <Send size={22} aria-hidden="true" />
       </button>
 
       {submitState === "success" && (
@@ -133,7 +133,7 @@ export function ContactForm() {
           className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-[21px] leading-7 text-emerald-800"
         >
           <CheckCircle2
-            size={22}
+            size={24}
             className="mt-1 shrink-0"
             aria-hidden="true"
           />

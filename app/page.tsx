@@ -50,7 +50,7 @@ export default function Home() {
         >
           <ScrollReveal direction="left">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[.16em] text-primary shadow-sm">
-              <Sparkles size={15} aria-hidden="true" /> WELCOME
+              <Sparkles size={18} aria-hidden="true" /> WELCOME
             </p>
             <h1 className="mt-6 text-[clamp(42px,7vw,76px)] font-bold leading-[1.1] tracking-[-.055em]">
               E-Portfolio
@@ -66,8 +66,8 @@ export default function Home() {
               {profile.bio2}
             </p>
             <div className="mt-8 flex max-w-[560px] items-center gap-3 rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm">
-              <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Heart size={17} aria-hidden="true" />
+              <span className="mt-0.5 grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                <Heart size={30} aria-hidden="true" />
               </span>
               <p className="flex-1 text-center text-[22px] leading-7 text-ink md:text-2xl">
                 &ldquo;{profile.objective}&rdquo;
@@ -137,7 +137,7 @@ export default function Home() {
                         /{number}
                       </span>
                       <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                        <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
+                        <Icon size={22} strokeWidth={1.7} aria-hidden="true" />
                       </span>
                     </div>
                     <h3 className="mt-6 mb-2 text-[24px] font-bold tracking-tight">
@@ -149,7 +149,7 @@ export default function Home() {
                     <span className="mt-auto flex items-center gap-2 text-[22px] font-bold text-primary">
                       {cta}
                       <ArrowRight
-                        size={14}
+                        size={18}
                         className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
                       />
                     </span>
@@ -175,7 +175,7 @@ export default function Home() {
               href="/works"
               className="mb-1 flex items-center gap-2 text-[21px] font-bold text-primary"
             >
-              ดูผลงานทั้งหมด <ArrowRight size={14} />
+              ดูผลงานทั้งหมด <ArrowRight size={18} />
             </Link>
           </ScrollReveal>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">

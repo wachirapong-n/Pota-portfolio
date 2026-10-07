@@ -18,7 +18,7 @@ export default function ContactPage() {
         <div className={container}>
           <ScrollReveal direction="left">
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 uppercase bg-white px-4 py-2 text-xl font-bold tracking-[.16em] text-primary shadow-sm">
-              <Sparkles size={15} aria-hidden="true" /> Start a conversation
+              <Sparkles size={18} aria-hidden="true" /> Start a conversation
             </p>
             <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">
               ติดต่อฉัน
@@ -75,9 +75,9 @@ export default function ContactPage() {
               rel="noreferrer"
               className="mb-5 inline-flex items-center gap-2 font-semibold text-primary underline-offset-4 transition-colors hover:text-ink hover:underline"
             >
-              <MapPin size={20} aria-hidden="true" />
+              <MapPin size={22} aria-hidden="true" />
               เปิดตำแหน่งใน Google Maps
-              <ExternalLink size={18} aria-hidden="true" />
+              <ExternalLink size={20} aria-hidden="true" />
             </a>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={100}>

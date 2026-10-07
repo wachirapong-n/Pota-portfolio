@@ -71,7 +71,7 @@ function DetailCard({
       className={`rounded-2xl border border-line bg-white p-5 md:p-6 ${className}`}
     >
       <h2 className="mb-4 flex items-center gap-2.5 text-[22px] font-bold text-ink">
-        <Icon size={18} aria-hidden="true" className="shrink-0 text-primary" />
+        <Icon size={22} aria-hidden="true" className="shrink-0 text-primary" />
         {title}
       </h2>
       {children}
@@ -115,10 +115,10 @@ export default async function ProjectDetail({
             href="/works"
             className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[21px] font-medium text-slate-600 transition-colors hover:text-primary"
           >
-            <ArrowLeft size={14} aria-hidden="true" /> กลับไปหน้าผลงาน
+            <ArrowLeft size={18} aria-hidden="true" /> กลับไปหน้าผลงาน
           </Link>
           <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold uppercase tracking-[.14em] text-primary shadow-sm">
-            <Sparkles size={14} aria-hidden="true" /> {project.category}
+            <Sparkles size={18} aria-hidden="true" /> {project.category}
           </div>
           <h1 className="mb-4 max-w-[1080px] text-[clamp(36px,6vw,62px)] font-bold leading-tight tracking-[-.04em]">
             <span className="mr-3 text-primary">{project.number} | </span>
@@ -149,7 +149,7 @@ export default async function ProjectDetail({
             <dl className="grid gap-3 text-[21px] leading-7">
               <div className="flex items-start gap-2.5">
                 <Tag
-                  size={15}
+                  size={18}
                   aria-hidden="true"
                   className="mt-0.5 shrink-0 text-slate-500"
                 />
@@ -162,7 +162,7 @@ export default async function ProjectDetail({
               </div>
               <div className="flex items-start gap-2.5">
                 <Wrench
-                  size={15}
+                  size={18}
                   aria-hidden="true"
                   className="mt-0.5 shrink-0 text-slate-500"
                 />
@@ -177,7 +177,7 @@ export default async function ProjectDetail({
               </div>
               <div className="flex items-start gap-2.5">
                 <Shapes
-                  size={15}
+                  size={18}
                   aria-hidden="true"
                   className="mt-0.5 shrink-0 text-slate-500"
                 />

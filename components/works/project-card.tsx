@@ -49,7 +49,7 @@ export function ProjectCard({
             {project.title}
           </h2>
           <ArrowUpRight
-            size={18}
+            size={20}
             className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
           />
         </div>

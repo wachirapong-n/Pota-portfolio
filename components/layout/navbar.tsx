@@ -57,7 +57,7 @@ export function Navbar() {
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          {open ? <X size={21} /> : <Menu size={21} />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {open && (
