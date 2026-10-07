@@ -20,15 +20,15 @@ export default function AboutPage() {
         <div className="relative mx-auto grid w-full max-w-[1120px] items-center gap-12 px-6 md:grid-cols-[1fr_0.82fr] md:gap-16 max-sm:px-[18px]">
           <ScrollReveal direction="left">
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border uppercase border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[0.16em] text-primary shadow-sm">
-              <Sparkles size={18} aria-hidden="true" /> About Me
+              <Sparkles size={18} aria-hidden="true" /> GET TO KNOW
             </p>
             <h1 className="max-w-[650px] text-[clamp(38px,6vw,64px)] font-bold leading-[1.2] tracking-[-0.04em] text-ink">
-              รู้จักตัวตน
-              <span className="mt-1 block text-primary">และเส้นทางของฉัน</span>
+              ABOUT
+              <span className="mt-1  text-primary"> ME</span>
             </h1>
             <p className="mt-6 max-w-[570px] text-[22px] leading-8 text-muted md:text-2xl lg:text-2xl">
-              เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
-              เพื่อพัฒนาการเรียนรู้ให้สนุกและมีความหมายยิ่งขึ้น
+              สุขไหนไม่เท่า{" "}
+              <span className="mt-1  text-primary">"ศุกร์ เสาร์ อาทิตย์"</span>
             </p>
           </ScrollReveal>
 
