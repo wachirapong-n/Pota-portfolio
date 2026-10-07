@@ -41,7 +41,7 @@ export function ProjectCard({
             {project.number}
           </span>
         )}
-        <div className="text-[20px] font-bold uppercase tracking-[.14em] text-primary">
+        <div className="text-[20px] font-bold uppercase tracking-wider text-primary">
           {project.category}
         </div>
         <div className="mt-2 flex items-center justify-between">
