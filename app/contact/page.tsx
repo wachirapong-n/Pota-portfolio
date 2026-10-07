@@ -21,7 +21,7 @@ export default function ContactPage() {
               <Sparkles size={18} aria-hidden="true" /> Start a conversation
             </p>
             <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">
-              Contact Me
+              Contact <span className="mt-1  text-primary"> Me</span>
             </h1>
             <p className="max-w-[760px] text-[22px] leading-8 text-muted">
               หากมีคำถาม ข้อเสนอแนะ หรืออยากพูดคุยเกี่ยวกับผลงาน
