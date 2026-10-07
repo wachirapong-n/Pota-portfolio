@@ -28,7 +28,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 max-w-[570px] text-[22px] leading-8 text-muted md:text-2xl lg:text-2xl">
               สุขไหนไม่เท่า{" "}
-              <span className="mt-1  text-primary">"ศุกร์ เสาร์ อาทิตย์"</span>
+              <span className="mt-1  text-primary">{"ศุกร์ เสาร์ อาทิตย์"}</span>
             </p>
           </ScrollReveal>
 
