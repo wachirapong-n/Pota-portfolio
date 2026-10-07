@@ -34,7 +34,7 @@ export function Navbar() {
               alt="Logo"
               width={34}
               height={34}
-              className="object-cover"
+              className="animate-float object-cover motion-reduce:animate-none"
             />
           </span>
           <span>{profile.name}</span>

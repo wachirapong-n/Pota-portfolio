@@ -11,14 +11,12 @@ const notoSansThai = Noto_Sans_Thai({
 
 export const metadata: Metadata = {
   title: {
-    default: "Your Name — Developer Portfolio",
-    template: "%s | Your Name",
+    default: "Nicharee — ePortfolio",
+    template: "%s | Nicharee",
   },
-  description:
-    "Portfolio of a computer science student and frontend developer.",
+
   openGraph: {
-    title: "Your Name — Developer Portfolio",
-    description: "Selected work, background, and contact information.",
+    title: "Nicharee — ePortfolio",
     type: "website",
   },
 };
