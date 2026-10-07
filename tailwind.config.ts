@@ -26,10 +26,15 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-7px)" },
         },
+        "arrow-reveal": {
+          "0%": { clipPath: "inset(0 100% 0 0)" },
+          "100%": { clipPath: "inset(0 0 0 0)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 240ms ease-out both",
         float: "float 2.2s ease-in-out infinite",
+        "arrow-reveal": "arrow-reveal 3000ms ease-out both",
       },
     },
   },
