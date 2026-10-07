@@ -15,10 +15,6 @@ export function Footer() {
         <div className="flex flex-wrap justify-between gap-9 pb-9">
           <div className="max-w-[800px]">
             <div className="text-2xl font-bold">{profile.name}</div>
-            <p className="mt-2 text-[21px] leading-7 text-slate-300">
-              “เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
-              เพื่อพัฒนาการเรียนรู้”
-            </p>
           </div>
           <nav
             aria-label="Footer navigation"
@@ -39,7 +35,6 @@ export function Footer() {
           <span>
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </span>
-
         </div>
       </div>
     </footer>
