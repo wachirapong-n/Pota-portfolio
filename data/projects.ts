@@ -11,6 +11,7 @@ export type Project = {
   video?: string;
   gallery?: string[];
   role: string;
+  coverImage: string;
 };
 
 export const projects: Project[] = [
@@ -27,6 +28,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การใช้งาน ChatGPT และการเขียน Prompt ให้ได้ผลลัพธ์ตรงตามต้องการ",
     role: "ออกแบบและจัดทำอินโฟกราฟิก",
+    coverImage: "/projects/chatgpt-guide.png",
   },
 
   {
@@ -42,6 +44,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การวิเคราะห์และสรุปสาระสำคัญ พร้อมนำเสนอข้อมูลให้เข้าใจง่าย",
     role: "วิเคราะห์ สรุปเนื้อหา และออกแบบอินโฟกราฟิก",
+    coverImage: "/projects/behaviorism.png",
   },
 
   {
@@ -57,6 +60,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การใช้ NotebookLM เพื่อช่วยค้นคว้า สรุป และจัดระบบข้อมูล",
     role: "ค้นคว้า วิเคราะห์ และจัดทำสรุปเนื้อหา",
+    coverImage: "/projects/learning-theories.png",
   },
 
   {
@@ -65,14 +69,14 @@ export const projects: Project[] = [
     title: "Video — Explore AR/VR with Quiver",
     description:
       "วิดีโอแนะนำการใช้งานแอปพลิเคชัน Quiver ที่เปลี่ยนภาพระบายสี 2 มิติให้กลายเป็นโมเดล 3 มิติ สร้างประสบการณ์การเรียนรู้ผ่านเทคโนโลยี AR",
-    image: "/projects/quiver.png",
-    video: "/projects/quiver.mp4",
+    video: "https://youtu.be/vV-0dRyaszs?si=DayOXBj7swnlpyvb",
     category: "Video",
     tools: ["Quiver"],
     projectType: "Educational Video",
     learning:
       "เรียนรู้การประยุกต์ใช้ AR เพื่อสร้างสื่อและประสบการณ์การเรียนรู้ที่น่าสนใจ",
     role: "จัดทำวิดีโอแนะนำการใช้งาน",
+    coverImage: "/projects/explore-ar-vr-with-quiver.png",
   },
 
   {
@@ -88,6 +92,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การใช้ Gemini สร้างสรรค์นิทาน ตัวละคร และภาพประกอบสำหรับเด็ก",
     role: "สร้างสรรค์เนื้อเรื่อง ตัวละคร และภาพประกอบ",
+    coverImage: "/projects/indy-sompoy.png",
   },
 
   {
@@ -102,6 +107,7 @@ export const projects: Project[] = [
     projectType: "Web Application",
     learning: "เรียนรู้การพัฒนาเว็บแอปพลิเคชันเพื่อการศึกษา และการปรับแก้โค้ด",
     role: "จัดทำเว็บแอปพลิเคชันและปรับแก้โค้ดให้มีประสิทธิภาพ",
+    coverImage: "/projects/nathi-khong-noo.png",
   },
 
   {
@@ -110,13 +116,13 @@ export const projects: Project[] = [
     title: "AI Video Production — Google Vids",
     description:
       "วิดีโอการสอนเรื่อง การเก็บของเล่น สำหรับเด็กระดับปฐมวัย โดยใช้ Google Vids เป็นเครื่องมือในการผลิตสื่อการเรียนรู้",
-    image: "/projects/google-vids.png",
-    video: "/projects/google-vids.mp4",
+    video: "https://youtu.be/IHeHzadUp_Y?si=4m125ENjNC9DrLsJ",
     category: "AI Video Production",
     tools: ["Google Vids"],
     projectType: "Educational Video",
     learning: "เรียนรู้การใช้ AI ช่วยสร้างวิดีโอการสอนให้เหมาะสมกับผู้เรียน",
     role: "จัดทำวิดีโอการสอน",
+    coverImage: "/projects/google-vids.png",
   },
 
   {
@@ -133,5 +139,6 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การออกแบบ Storyboard การเขียนสคริปต์ และการทำงานร่วมกับผู้อื่น",
     role: "ออกแบบ Storyboard และเขียนสคริปต์สำหรับการพากย์",
+    coverImage: "/projects/rajapruek.png",
   },
 ];

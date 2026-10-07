@@ -1,41 +1,164 @@
-import type { Metadata } from "next";
-import { BriefcaseBusiness } from "lucide-react";
-import { profile } from "@/data/profile";
-import { skillGroups } from "@/data/skills";
-import { experiences } from "@/data/experience";
-
-export const metadata: Metadata = { title: "About" };
-const container = "mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]";
-const eyebrow = "text-[11px] font-bold uppercase tracking-[.16em] text-primary";
-const title = "mt-3 mb-3 text-[clamp(30px,4vw,42px)] font-bold tracking-[-.04em]";
+import Image from "next/image";
+import { Heart, Sparkles, Target, UserRound } from "lucide-react";
+import {
+  aboutGoal,
+  gridItemsInterested,
+  gridItemsISkill,
+  introductionData,
+} from "@/data/introdcution";
+import ScrollReveal from "@/components/about/scroll-reveal";
+import AboutGrid from "@/components/about/about-grid";
 
 export default function AboutPage() {
-  return <>
-    <section className="bg-mist py-[76px] max-md:pt-[54px]"><div className={container}><div className={eyebrow}>A little context</div><h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">About me</h1><p className="max-w-[590px] text-[15px] leading-7 text-muted">The person behind the projects: what I’m learning, what I care about, and where I hope to go next.</p></div></section>
+  return (
+    <main className="overflow-hidden">
+      <section className="relative bg-mist py-20 md:py-28">
+        <div
+          className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-white/70 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto grid w-full max-w-[1120px] items-center gap-12 px-6 md:grid-cols-[1fr_0.82fr] md:gap-16 max-sm:px-[18px]">
+          <ScrollReveal direction="left">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xs font-bold tracking-[0.16em] text-primary shadow-sm">
+              <Sparkles size={15} aria-hidden="true" /> เกี่ยวกับฉัน
+            </p>
+            <h1 className="max-w-[650px] text-[clamp(38px,6vw,64px)] font-bold leading-[1.2] tracking-[-0.04em] text-ink">
+              รู้จักตัวตน
+              <span className="mt-1 block text-primary">และเส้นทางของฉัน</span>
+            </h1>
+            <p className="mt-6 max-w-[570px] text-base leading-8 text-muted md:text-lg">
+              เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
+              เพื่อพัฒนาการเรียนรู้ให้สนุกและมีความหมายยิ่งขึ้น
+            </p>
+            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-white bg-white/80 px-4 py-3 text-sm text-ink shadow-sm">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                <UserRound size={19} aria-hidden="true" />
+              </span>
+              <span>
+                <span className="block text-sm text-muted">ชื่อเล่น</span>
+                <span className="font-semibold text-lg">
+                  {introductionData.nickname}
+                </span>
+              </span>
+            </div>
+          </ScrollReveal>
 
-    <section className="py-[100px] max-md:py-[72px]"><div className={`${container} grid grid-cols-[.8fr_1.2fr] gap-[72px] max-md:grid-cols-1 max-md:gap-4`}>
-      <div><div className={eyebrow}>Introduction</div><h2 className={title}>Curious by nature.<br/>Developer by practice.</h2></div>
-      <div><p className="mt-0 text-base leading-7 text-muted">{profile.bio}</p><p className="leading-7 text-muted">I’m currently studying {profile.education.faculty.toLowerCase()} at {profile.education.institution}. I’m especially interested in {profile.interests.join(", ").toLowerCase()}, and I’m working toward a career where I can help shape products from early ideas through polished, accessible interfaces.</p><p className="leading-7 text-muted">My goal is to join a thoughtful team, contribute with curiosity and care, and keep building the technical judgment that comes from solving real problems.</p><div className="mt-6 flex flex-wrap gap-2">{profile.interests.map(interest => <span key={interest} className="rounded-sm bg-slate-100 px-2.5 py-1.5 text-xs font-semibold text-slate-600">{interest}</span>)}</div></div>
-    </div></section>
+          <ScrollReveal
+            direction="right"
+            delay={100}
+            className="mx-auto w-full max-w-[430px]"
+          >
+            <div className="relative">
+              <div
+                className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15"
+                aria-hidden="true"
+              />
+              <div className="relative aspect-[4/4.4] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)]">
+                <Image
+                  src="/images/introduce.jpg"
+                  alt={`ภาพแนะนำตัวของ ${introductionData.name}`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 90vw, 430px"
+                  className="rounded-[1.6rem] object-cover"
+                />
+              </div>
+              <div
+                className="absolute -right-4 top-8 grid h-14 w-14 place-items-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20"
+                aria-hidden="true"
+              >
+                <Heart size={23} />
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-    <section className="bg-mist py-[82px]"><div className={container}><div className={eyebrow}>Learning path</div><h2 className={title}>Education</h2>
-      <div className="relative mt-8 max-w-[720px] border-l border-slate-300 pl-7"><span className="absolute -left-1.5 top-1.5 size-3 rounded-full bg-primary"/><div className="flex flex-wrap justify-between gap-5">
-        <div><div className="text-[19px] font-bold">{profile.education.institution}</div><div className="mt-1.5 text-sm text-muted">{profile.education.faculty}</div><div className="mt-2 text-[13px] leading-6 text-muted">{profile.education.note}</div></div>
-        <div className="text-left text-xs font-bold text-primary sm:text-right">{profile.education.period}<div className="mt-1.5 font-normal text-muted">{profile.education.location}</div></div>
-      </div></div>
-    </div></section>
+      <section className="py-20 md:py-28">
+        <div className="mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
+          <ScrollReveal direction="left" className="mb-10 md:mb-14">
+            <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              แนะนำตัว
+            </h2>
+          </ScrollReveal>
 
-    <section className="py-[100px] max-md:py-[72px]"><div className={container}><div className={eyebrow}>What I’m learning</div><h2 className={title}>Skills & tools</h2><p className="mt-0 max-w-[540px] text-[13px] leading-6 text-muted">Starter content: review these example skills and keep only the tools you can confidently discuss.</p>
-      <div className="mt-9 grid grid-cols-4 gap-7 max-md:grid-cols-2 max-md:gap-y-7">
-        {skillGroups.map(group => <div key={group.name}><h3 className="mb-4 flex items-center gap-2.5 text-[13px] font-bold"><span className="size-1.5 rounded-full bg-primary"/>{group.name}</h3><div className="grid gap-2.5">{group.skills.map(skill => <div key={skill} className="border-b border-line pb-2.5 text-[13px] text-slate-600">{skill}</div>)}</div></div>)}
-      </div>
-    </div></section>
+          <div className="grid gap-5 md:grid-cols-[0.9fr_1.1fr] md:gap-8">
+            <ScrollReveal direction="left" delay={100}>
+              <div className="h-full rounded-3xl bg-ink p-7 text-white md:p-9">
+                <div className="mb-8 grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-white">
+                  <UserRound size={22} aria-hidden="true" />
+                </div>
+                <h3 className="text-2xl font-bold leading-relaxed">
+                  {introductionData.name}
+                </h3>
+                <p className="mt-2 text-white/70">{introductionData.faculty}</p>
+                <div className="mt-8 h-px bg-white/15" />
+                <dl className="mt-6 grid gap-5 sm:grid-cols-2">
+                  <div>
+                    <dt className="text-xs text-white/60">สาขาวิชา</dt>
+                    <dd className="mt-1 font-semibold">
+                      {introductionData.major}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs text-white/60">รหัสนักศึกษา</dt>
+                    <dd className="mt-1 font-semibold">
+                      {introductionData.studentId}
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </ScrollReveal>
 
-    <section className="bg-mist py-[82px]"><div className={container}><div className={eyebrow}>Where I’ve contributed</div><h2 className={title}>Experience</h2>
-      <div className="mt-7 grid gap-6">{experiences.map((experience, index) => <article key={`${experience.organization}-${index}`} className="grid grid-cols-[190px_1fr] gap-[26px] border-t border-line pt-6 max-sm:grid-cols-1 max-sm:gap-2">
-        <div className="text-xs font-bold text-primary">{experience.date}</div>
-        <div><div className="flex items-center gap-2"><BriefcaseBusiness size={16} className="text-primary"/><h3 className="m-0 text-lg font-semibold">{experience.role}</h3></div><div className="mt-1.5 text-[13px] text-muted">{experience.organization}</div><p className="text-[13px] leading-6 text-muted">{experience.description}</p><ul className="list-disc pl-5 text-[13px] leading-6 text-muted">{experience.responsibilities.map(item => <li key={item} className="mb-1">{item}</li>)}</ul><div className="flex flex-wrap gap-2">{experience.technologies.map(technology => <span className="rounded-sm bg-white px-2 py-1.5 text-[11px] font-semibold text-slate-600" key={technology}>{technology}</span>)}</div></div>
-      </article>)}</div>
-    </div></section>
-  </>;
+            <ScrollReveal direction="right" delay={200}>
+              <div className="flex h-full flex-col justify-center rounded-3xl border border-line bg-white p-7 md:p-9">
+                <p className="text-lg leading-9 text-muted">
+                  {introductionData.description}
+                </p>
+                <div className="mt-7 flex items-start gap-3 rounded-2xl bg-mist p-5">
+                  <span className="mt-0.5 text-primary">
+                    <Sparkles size={19} aria-hidden="true" />
+                  </span>
+                  <p className="text-sm leading-7 text-ink">
+                    เชื่อว่าการเรียนรู้ที่ดีเกิดขึ้นได้
+                    เมื่อเนื้อหาและสื่อถูกออกแบบให้เข้าใจง่ายและเข้าถึงผู้เรียน
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24 bg-mist">
+        <AboutGrid title="ความสนใจ" items={gridItemsInterested} />
+      </section>
+      <section className=" py-20 md:py-24">
+        <AboutGrid title="ทักษะของฉัน" items={gridItemsISkill} />
+      </section>
+      <section className="py-20 md:py-28 bg-mist">
+        <div className="mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
+          <ScrollReveal direction="left">
+            <div className="relative overflow-hidden rounded-[2rem] bg-ink px-7 py-10 text-white md:px-14 md:py-14">
+              <div
+                className="absolute -right-10 -top-20 h-64 w-64 rounded-full border-[28px] border-white/5"
+                aria-hidden="true"
+              />
+              <div className="relative max-w-[760px] ">
+                <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white/90">
+                  <Target size={16} aria-hidden="true" /> เป้าหมายของฉัน
+                </span>
+                <h2 className="text-3xl font-bold leading-snug md:text-4xl">
+                  เติบโตไปพร้อมกับการสร้างสรรค์สิ่งที่มีคุณค่า
+                </h2>
+                <p className="mt-5 text-base leading-8 text-white/75 md:text-lg">
+                  {aboutGoal.goal}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </main>
+  );
 }
