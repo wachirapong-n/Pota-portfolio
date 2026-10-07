@@ -10,6 +10,7 @@ import {
   X,
   ZoomIn,
 } from "lucide-react";
+import ScrollReveal from "@/components/about/scroll-reveal";
 
 type ProjectMediaGalleryProps = {
   title: string;
@@ -64,7 +65,11 @@ export default function ProjectMediaGallery({
 
   return (
     <>
-      <div className="relative col-span-1 grid min-h-[320px] place-items-center overflow-hidden rounded-2xl border border-line bg-slate-100 md:col-span-4 md:row-span-5 md:col-start-1 md:row-start-1 md:min-h-0">
+      <ScrollReveal
+        direction="left"
+        className="col-span-1 h-full md:col-span-4 md:row-span-5 md:col-start-1 md:row-start-1"
+      >
+      <div className="relative grid h-full min-h-[320px] place-items-center overflow-hidden rounded-2xl border border-line bg-slate-100 md:min-h-0">
         {youtubeEmbed ? (
           <iframe
             src={youtubeEmbed}
@@ -98,7 +103,7 @@ export default function ProjectMediaGallery({
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-contain"
+                className="object-cover"
               />
             </button>
 
@@ -133,8 +138,14 @@ export default function ProjectMediaGallery({
           </div>
         )}
       </div>
+      </ScrollReveal>
 
-      <div className="flex items-center rounded-2xl border border-line bg-mist p-5 md:col-span-4 md:row-span-1 md:col-start-1 md:row-start-6 md:px-6">
+      <ScrollReveal
+        direction="left"
+        delay={100}
+        className="md:col-span-4 md:row-span-1 md:col-start-1 md:row-start-6"
+      >
+      <div className="flex h-full items-center rounded-2xl border border-line bg-mist p-5 md:px-6">
         {hasImages ? (
           <button
             type="button"
@@ -163,6 +174,7 @@ export default function ProjectMediaGallery({
           </span>
         )}
       </div>
+      </ScrollReveal>
 
       {lightboxIndex !== null && hasImages && (
         <div
