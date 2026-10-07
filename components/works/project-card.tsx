@@ -8,14 +8,16 @@ const previewColors = ["bg-slate-100", "bg-slate-200/70", "bg-slate-100"];
 export function ProjectCard({
   project,
   index = 0,
+  showNumber = false,
 }: {
   project: Project;
   index?: number;
+  showNumber?: boolean;
 }) {
   return (
     <Link
       href={`/works/${project.slug}`}
-      className="group block overflow-hidden rounded-md border border-line bg-white text-ink transition duration-200 hover:-translate-y-1 hover:border-slate-400"
+      className="group block h-full overflow-hidden rounded-2xl border border-line bg-white text-ink transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_18px_40px_-28px_rgba(1,21,62,0.35)]"
     >
       <div
         aria-label={`${project.title} project preview placeholder`}
@@ -24,12 +26,17 @@ export function ProjectCard({
         <Image
           fill
           className="object-cover"
-          src="/images/profile.jpg"
+          src={project.coverImage || project.image || "/images/profile.jpg"}
           alt={project.title}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
         />
+        {showNumber && (
+          <span className="absolute bottom-0 left-5 z-10 translate-y-1/2 rounded-full border-4 border-white bg-ink px-3 py-1 text-xs font-bold tracking-[.12em] text-white shadow-sm">
+            {project.number}
+          </span>
+        )}
       </div>
-      <div className="p-5 pb-[22px]">
+      <div className={`p-5 pb-[22px] ${showNumber ? "pt-8" : ""}`}>
         <div className="text-[10px] font-bold uppercase tracking-[.14em] text-primary">
           {project.category}
         </div>
