@@ -163,7 +163,7 @@ export default function ProjectMediaGallery({
               onClick={() => openLightbox(currentIndex)}
               className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary transition-colors hover:text-ink"
             >
-            <ZoomIn size={20} aria-hidden="true" /> กดดูรูปภาพเต็ม
+            <ZoomIn size={20} aria-hidden="true" /> ดูรูปภาพเต็ม
             </button>
           ) : video ? (
             <a
