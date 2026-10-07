@@ -30,13 +30,13 @@ export function ProjectCard({
           alt={project.title}
           sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
         />
+      </div>
+      <div className={`relative p-5 pb-[22px] ${showNumber ? "pt-8" : ""}`}>
         {showNumber && (
-          <span className="absolute bottom-0 left-5 z-10 translate-y-1/2 rounded-full border-4 border-white bg-ink px-3 py-1 text-xs font-bold tracking-[.12em] text-white shadow-sm">
+          <span className="absolute left-5 top-0 z-20 -translate-y-1/2 rounded-full border-2 border-white bg-ink px-3 py-1 text-xs font-bold tracking-[.12em] text-white shadow-sm">
             {project.number}
           </span>
         )}
-      </div>
-      <div className={`p-5 pb-[22px] ${showNumber ? "pt-8" : ""}`}>
         <div className="text-[10px] font-bold uppercase tracking-[.14em] text-primary">
           {project.category}
         </div>

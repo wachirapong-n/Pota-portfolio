@@ -28,7 +28,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การใช้งาน ChatGPT และการเขียน Prompt ให้ได้ผลลัพธ์ตรงตามต้องการ",
     role: "ออกแบบและจัดทำอินโฟกราฟิก",
-    coverImage: "/projects/chatgpt-guide.png",
+    coverImage: "/images/profile.jpg",
   },
 
   {
@@ -37,14 +37,15 @@ export const projects: Project[] = [
     title: "Infographic — พฤติกรรมนิยม",
     description:
       "อินโฟกราฟิกสรุปสาระสำคัญของทฤษฎีพฤติกรรมนิยม พร้อมเรียบเรียงเนื้อหาให้อยู่ในรูปแบบที่เข้าใจง่าย",
-    image: "/projects/behaviorism.png",
+    image: "/images/behavior.png",
     category: "Infographic",
     tools: [],
     projectType: "Infographic",
     learning:
       "เรียนรู้การวิเคราะห์และสรุปสาระสำคัญ พร้อมนำเสนอข้อมูลให้เข้าใจง่าย",
     role: "วิเคราะห์ สรุปเนื้อหา และออกแบบอินโฟกราฟิก",
-    coverImage: "/projects/behaviorism.png",
+    coverImage: "/images/profile.jpg",
+    gallery: ["/images/behavior.png", "/images/behavior2.png"],
   },
 
   {
@@ -60,7 +61,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การใช้ NotebookLM เพื่อช่วยค้นคว้า สรุป และจัดระบบข้อมูล",
     role: "ค้นคว้า วิเคราะห์ และจัดทำสรุปเนื้อหา",
-    coverImage: "/projects/learning-theories.png",
+    coverImage: "/images/profile.jpg",
   },
 
   {
@@ -76,7 +77,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การประยุกต์ใช้ AR เพื่อสร้างสื่อและประสบการณ์การเรียนรู้ที่น่าสนใจ",
     role: "จัดทำวิดีโอแนะนำการใช้งาน",
-    coverImage: "/projects/explore-ar-vr-with-quiver.png",
+    coverImage: "/images/profile.jpg",
   },
 
   {
@@ -92,7 +93,7 @@ export const projects: Project[] = [
     learning:
       "เรียนรู้การใช้ Gemini สร้างสรรค์นิทาน ตัวละคร และภาพประกอบสำหรับเด็ก",
     role: "สร้างสรรค์เนื้อเรื่อง ตัวละคร และภาพประกอบ",
-    coverImage: "/projects/indy-sompoy.png",
+    coverImage: "/images/profile.jpg",
   },
 
   {
@@ -107,7 +108,7 @@ export const projects: Project[] = [
     projectType: "Web Application",
     learning: "เรียนรู้การพัฒนาเว็บแอปพลิเคชันเพื่อการศึกษา และการปรับแก้โค้ด",
     role: "จัดทำเว็บแอปพลิเคชันและปรับแก้โค้ดให้มีประสิทธิภาพ",
-    coverImage: "/projects/nathi-khong-noo.png",
+    coverImage: "/images/profile.jpg",
   },
 
   {
@@ -122,7 +123,7 @@ export const projects: Project[] = [
     projectType: "Educational Video",
     learning: "เรียนรู้การใช้ AI ช่วยสร้างวิดีโอการสอนให้เหมาะสมกับผู้เรียน",
     role: "จัดทำวิดีโอการสอน",
-    coverImage: "/projects/google-vids.png",
+    coverImage: "/images/profile.jpg",
   },
 
   {
@@ -131,14 +132,13 @@ export const projects: Project[] = [
     title: "Short Educational Film — สวนราชพฤกษ์",
     description:
       "ภาพยนตร์สั้นเพื่อการศึกษาในหัวข้อการเชิญชวนท่องเที่ยวสวนราชพฤกษ์",
-    image: "/projects/rajapruek.png",
-    video: "/projects/rajapruek.mp4",
+    video: "https://youtu.be/NSuTBz51dqo?si=L3RcDf36H01gznjg",
     category: "Short Educational Film",
     tools: [],
     projectType: "Short Film",
     learning:
       "เรียนรู้การออกแบบ Storyboard การเขียนสคริปต์ และการทำงานร่วมกับผู้อื่น",
     role: "ออกแบบ Storyboard และเขียนสคริปต์สำหรับการพากย์",
-    coverImage: "/projects/rajapruek.png",
+    coverImage: "/images/profile.jpg",
   },
 ];

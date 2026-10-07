@@ -30,7 +30,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug);
-  return project ? { title: project.title, description: project.description } : {};
+  return project
+    ? { title: project.title, description: project.description }
+    : {};
 }
 
 const container = "mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]";
@@ -40,8 +42,8 @@ function getYoutubeEmbedUrl(url: string) {
     const parsed = new URL(url);
     const videoId = parsed.hostname.includes("youtu.be")
       ? parsed.pathname.slice(1)
-      : parsed.searchParams.get("v") ??
-        parsed.pathname.match(/\/(?:embed|shorts|live)\/([^/?]+)/)?.[1];
+      : (parsed.searchParams.get("v") ??
+        parsed.pathname.match(/\/(?:embed|shorts|live)\/([^/?]+)/)?.[1]);
     return videoId ? `https://www.youtube-nocookie.com/embed/${videoId}` : null;
   } catch {
     return null;
@@ -50,7 +52,9 @@ function getYoutubeEmbedUrl(url: string) {
 
 function isPublicAssetAvailable(assetPath: string) {
   if (/^https?:\/\//i.test(assetPath)) return true;
-  return existsSync(join(process.cwd(), "public", assetPath.replace(/^\/+/, "")));
+  return existsSync(
+    join(process.cwd(), "public", assetPath.replace(/^\/+/, "")),
+  );
 }
 
 function DetailCard({
@@ -65,7 +69,9 @@ function DetailCard({
   className?: string;
 }) {
   return (
-    <section className={`rounded-md border border-line bg-white p-5 md:p-6 ${className}`}>
+    <section
+      className={`rounded-md border border-line bg-white p-5 md:p-6 ${className}`}
+    >
       <h2 className="mb-4 flex items-center gap-2.5 text-base font-bold text-ink">
         <Icon size={18} aria-hidden="true" className="shrink-0 text-primary" />
         {title}
@@ -85,11 +91,15 @@ export default async function ProjectDetail({
   if (!project) notFound();
 
   const youtubeEmbed = project.video ? getYoutubeEmbedUrl(project.video) : null;
-  const imageAvailable = project.image ? isPublicAssetAvailable(project.image) : false;
+  const imageAvailable = project.image
+    ? isPublicAssetAvailable(project.image)
+    : false;
   const videoAvailable = project.video
     ? Boolean(youtubeEmbed || isPublicAssetAvailable(project.video))
     : false;
-  const extraImages = (project.gallery ?? []).filter(isPublicAssetAvailable).slice(0, 3);
+  const extraImages = (project.gallery ?? [])
+    .filter(isPublicAssetAvailable)
+    .slice(0, 3);
 
   return (
     <>
@@ -163,16 +173,45 @@ export default async function ProjectDetail({
           >
             <dl className="grid gap-3 text-[13px] leading-5">
               <div className="flex items-start gap-2.5">
-                <Tag size={15} aria-hidden="true" className="mt-0.5 shrink-0 text-slate-500" />
-                <div><dt className="font-semibold text-ink">ประเภท</dt><dd className="mt-0.5 text-muted">{project.category || "ยังไม่ได้ระบุ"}</dd></div>
+                <Tag
+                  size={15}
+                  aria-hidden="true"
+                  className="mt-0.5 shrink-0 text-slate-500"
+                />
+                <div>
+                  <dt className="font-semibold text-ink">ประเภท</dt>
+                  <dd className="mt-0.5 text-muted">
+                    {project.category || "ยังไม่ได้ระบุ"}
+                  </dd>
+                </div>
               </div>
               <div className="flex items-start gap-2.5">
-                <Wrench size={15} aria-hidden="true" className="mt-0.5 shrink-0 text-slate-500" />
-                <div><dt className="font-semibold text-ink">เครื่องมือที่ใช้</dt><dd className="mt-0.5 text-muted">{project.tools.length ? project.tools.join(", ") : "ยังไม่ได้ระบุ"}</dd></div>
+                <Wrench
+                  size={15}
+                  aria-hidden="true"
+                  className="mt-0.5 shrink-0 text-slate-500"
+                />
+                <div>
+                  <dt className="font-semibold text-ink">เครื่องมือที่ใช้</dt>
+                  <dd className="mt-0.5 text-muted">
+                    {project.tools.length
+                      ? project.tools.join(", ")
+                      : "ยังไม่ได้ระบุ"}
+                  </dd>
+                </div>
               </div>
               <div className="flex items-start gap-2.5">
-                <Shapes size={15} aria-hidden="true" className="mt-0.5 shrink-0 text-slate-500" />
-                <div><dt className="font-semibold text-ink">รูปแบบ</dt><dd className="mt-0.5 text-muted">{project.projectType || "ยังไม่ได้ระบุ"}</dd></div>
+                <Shapes
+                  size={15}
+                  aria-hidden="true"
+                  className="mt-0.5 shrink-0 text-slate-500"
+                />
+                <div>
+                  <dt className="font-semibold text-ink">รูปแบบ</dt>
+                  <dd className="mt-0.5 text-muted">
+                    {project.projectType || "ยังไม่ได้ระบุ"}
+                  </dd>
+                </div>
               </div>
             </dl>
           </DetailCard>
@@ -183,7 +222,9 @@ export default async function ProjectDetail({
             title="บทบาทของฉัน"
             className="md:col-span-2 md:row-span-2"
           >
-            <p className="m-0 text-[13px] leading-6 text-muted">{project.role}</p>
+            <p className="m-0 text-[13px] leading-6 text-muted">
+              {project.role}
+            </p>
           </DetailCard>
 
           {/* D — What I learned */}
@@ -192,7 +233,9 @@ export default async function ProjectDetail({
             title="สิ่งที่ได้เรียนรู้"
             className="md:col-span-2 md:row-span-2"
           >
-            <p className="m-0 text-[13px] leading-6 text-muted">{project.learning}</p>
+            <p className="m-0 text-[13px] leading-6 text-muted">
+              {project.learning}
+            </p>
           </DetailCard>
 
           {/* E — Open full image or video link */}
@@ -204,7 +247,11 @@ export default async function ProjectDetail({
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline-offset-4 hover:underline"
               >
-                {youtubeEmbed ? <Play size={17} aria-hidden="true" /> : <ExternalLink size={17} aria-hidden="true" />}
+                {youtubeEmbed ? (
+                  <Play size={17} aria-hidden="true" />
+                ) : (
+                  <ExternalLink size={17} aria-hidden="true" />
+                )}
                 {youtubeEmbed ? "ลิงก์วิดีโอ YouTube" : "เปิดวิดีโอผลงาน"}
               </a>
             ) : project.image && imageAvailable ? (
@@ -217,7 +264,9 @@ export default async function ProjectDetail({
                 <ZoomIn size={18} aria-hidden="true" /> กดดูรูปภาพเต็ม
               </a>
             ) : (
-              <span className="text-sm text-muted">ยังไม่มีไฟล์ภาพหรือวิดีโอเพิ่มเติม</span>
+              <span className="text-sm text-muted">
+                ยังไม่มีไฟล์ภาพหรือวิดีโอเพิ่มเติม
+              </span>
             )}
           </div>
         </div>
@@ -225,7 +274,11 @@ export default async function ProjectDetail({
         {extraImages.length > 0 && (
           <section className="mt-12">
             <h2 className="mb-5 flex items-center gap-2.5 text-xl font-bold tracking-tight text-ink">
-              <ImageIcon size={20} aria-hidden="true" className="text-primary" />
+              <ImageIcon
+                size={20}
+                aria-hidden="true"
+                className="text-primary"
+              />
               ภาพตัวอย่างเพิ่มเติม
             </h2>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -245,7 +298,9 @@ export default async function ProjectDetail({
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                   />
-                  <span className="absolute right-3 bottom-3 grid size-9 place-items-center rounded-full bg-white/90 text-primary shadow-sm"><ZoomIn size={17}/></span>
+                  <span className="absolute right-3 bottom-3 grid size-9 place-items-center rounded-full bg-white/90 text-primary shadow-sm">
+                    <ZoomIn size={17} />
+                  </span>
                 </a>
               ))}
             </div>
