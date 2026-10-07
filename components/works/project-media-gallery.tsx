@@ -71,75 +71,75 @@ export default function ProjectMediaGallery({
         direction="left"
         className="col-span-1 h-full md:col-span-4 md:row-span-5 md:col-start-1 md:row-start-1"
       >
-      <div className="relative grid h-full min-h-[320px] place-items-center overflow-hidden rounded-2xl border border-line bg-slate-100 md:min-h-0">
-        {youtubeEmbed ? (
-          <iframe
-            src={youtubeEmbed}
-            title={`วิดีโอผลงาน ${title}`}
-            className="absolute inset-0 size-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        ) : video && !hasImages ? (
-          <video
-            className="absolute inset-0 size-full bg-black object-contain"
-            src={video}
-            controls
-            preload="metadata"
-            aria-label={`วิดีโอผลงาน ${title}`}
-          >
-            เบราว์เซอร์นี้ไม่รองรับวิดีโอ
-          </video>
-        ) : hasImages ? (
-          <>
-            <button
-              type="button"
-              onClick={() => openLightbox(currentIndex)}
-              aria-label={`เปิดภาพ ${currentIndex + 1} จาก ${images.length} แบบเต็มจอ`}
-              className="absolute inset-0 cursor-zoom-in focus-visible:z-10 focus-visible:rounded-2xl"
+        <div className="relative grid h-full min-h-[320px] place-items-center overflow-hidden rounded-2xl border border-line bg-slate-100 md:min-h-0">
+          {youtubeEmbed ? (
+            <iframe
+              src={youtubeEmbed}
+              title={`วิดีโอผลงาน ${title}`}
+              className="absolute inset-0 size-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          ) : video && !hasImages ? (
+            <video
+              className="absolute inset-0 size-full bg-black object-contain"
+              src={video}
+              controls
+              preload="metadata"
+              aria-label={`วิดีโอผลงาน ${title}`}
             >
-              <Image
-                src={images[currentIndex]}
-                alt={`${title} ภาพที่ ${currentIndex + 1}`}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-cover"
-              />
-            </button>
+              เบราว์เซอร์นี้ไม่รองรับวิดีโอ
+            </video>
+          ) : hasImages ? (
+            <>
+              <button
+                type="button"
+                onClick={() => openLightbox(currentIndex)}
+                aria-label={`เปิดภาพ ${currentIndex + 1} จาก ${images.length} แบบเต็มจอ`}
+                className="absolute inset-0 cursor-zoom-in focus-visible:z-10 focus-visible:rounded-2xl"
+              >
+                <Image
+                  src={images[currentIndex]}
+                  alt={`${title} ภาพที่ ${currentIndex + 1}`}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 66vw"
+                  className="object-cover"
+                />
+              </button>
 
-            {images.length > 1 && (
-              <>
-                <button
-                  type="button"
-                  onClick={showPrevious}
-                  aria-label="ดูภาพก่อนหน้า"
-                  className="absolute left-3 top-1/2 z-10 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/90 text-ink shadow-lg transition hover:scale-105 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                >
-                  <ChevronLeft size={22} aria-hidden="true" />
-                </button>
-                <button
-                  type="button"
-                  onClick={showNext}
-                  aria-label="ดูภาพถัดไป"
-                  className="absolute right-3 top-1/2 z-10 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/90 text-ink shadow-lg transition hover:scale-105 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                >
-                  <ChevronRight size={22} aria-hidden="true" />
-                </button>
-                <span className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-ink/85 px-3 py-2 text-xl font-semibold text-white backdrop-blur-sm">
-                  {currentIndex + 1} / {images.length}
-                </span>
-              </>
-            )}
-          </>
-        ) : (
-          <div className="flex flex-col items-center gap-3 px-6 text-center text-slate-500">
-            <Play size={32} aria-hidden="true" />
-            <span className="text-[22px]">ยังไม่มีภาพหรือวิดีโอผลงาน</span>
-          </div>
-        )}
-      </div>
+              {images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={showPrevious}
+                    aria-label="ดูภาพก่อนหน้า"
+                    className="absolute left-3 top-1/2 z-10 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/90 text-ink shadow-lg transition hover:scale-105 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <ChevronLeft size={22} aria-hidden="true" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showNext}
+                    aria-label="ดูภาพถัดไป"
+                    className="absolute right-3 top-1/2 z-10 grid size-11 -translate-y-1/2 place-items-center rounded-full border border-white/70 bg-white/90 text-ink shadow-lg transition hover:scale-105 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <ChevronRight size={22} aria-hidden="true" />
+                  </button>
+                  <span className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-ink/85 px-3 py-2 text-xl font-semibold text-white backdrop-blur-sm">
+                    {currentIndex + 1} / {images.length}
+                  </span>
+                </>
+              )}
+            </>
+          ) : (
+            <div className="flex flex-col items-center gap-3 px-6 text-center text-slate-500">
+              <Play size={32} aria-hidden="true" />
+              <span className="text-[22px]">ยังไม่มีภาพหรือวิดีโอผลงาน</span>
+            </div>
+          )}
+        </div>
       </ScrollReveal>
 
       <ScrollReveal
@@ -147,44 +147,44 @@ export default function ProjectMediaGallery({
         delay={100}
         className="md:col-span-4 md:row-span-1 md:col-start-1 md:row-start-6"
       >
-      <div className="flex h-full items-center rounded-2xl border border-line bg-mist p-5 md:px-6">
-        {linkURL ? (
-          <a
-            href={linkURL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
-          >
-            <ExternalLink size={18} aria-hidden="true" /> เปิดผลงาน
-          </a>
-        ) : hasImages ? (
-          <button
-            type="button"
-            onClick={() => openLightbox(currentIndex)}
-            className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary transition-colors hover:text-ink"
-          >
-            <ZoomIn size={18} aria-hidden="true" /> กดดูรูปภาพเต็ม
-          </button>
-        ) : video ? (
-          <a
-            href={video}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
-          >
-            {youtubeEmbed ? (
-              <Play size={17} aria-hidden="true" />
-            ) : (
-              <ExternalLink size={17} aria-hidden="true" />
-            )}
-            {youtubeEmbed ? "ลิงก์วิดีโอ YouTube" : "เปิดวิดีโอผลงาน"}
-          </a>
-        ) : (
-          <span className="text-[22px] text-muted">
-            ยังไม่มีไฟล์ภาพหรือวิดีโอเพิ่มเติม
-          </span>
-        )}
-      </div>
+        <div className="flex h-full items-center rounded-2xl border border-line bg-mist p-5 md:px-6">
+          {linkURL ? (
+            <a
+              href={linkURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
+            >
+              <ExternalLink size={18} aria-hidden="true" /> เปิดผลงาน
+            </a>
+          ) : hasImages ? (
+            <button
+              type="button"
+              onClick={() => openLightbox(currentIndex)}
+              className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary transition-colors hover:text-ink"
+            >
+              <ZoomIn size={18} aria-hidden="true" /> กดดูรูปภาพเต็ม
+            </button>
+          ) : video ? (
+            <a
+              href={video}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
+            >
+              {youtubeEmbed ? (
+                <Play size={17} aria-hidden="true" />
+              ) : (
+                <ExternalLink size={17} aria-hidden="true" />
+              )}
+              {youtubeEmbed ? "ลิงก์วิดีโอ YouTube" : "เปิดวิดีโอผลงาน"}
+            </a>
+          ) : (
+            <span className="text-[22px] text-muted">
+              ยังไม่มีไฟล์ภาพหรือวิดีโอเพิ่มเติม
+            </span>
+          )}
+        </div>
       </ScrollReveal>
 
       {lightboxIndex !== null && hasImages && (
@@ -225,7 +225,7 @@ export default function ProjectMediaGallery({
                   type="button"
                   onClick={showPrevious}
                   aria-label="ดูภาพก่อนหน้า"
-                  className="fixed inset-y-0 left-0 z-[110] flex w-14 items-center justify-center text-slate-300 transition-all duration-300 ease-out hover:bg-slate-700/40 hover:text-slate-300 focus-visible:bg-slate-600/40 focus-visible:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-400 sm:w-[88px]"
+                  className="fixed inset-y-0 left-0 z-[110] flex w-14 items-center justify-center text-slate-300 transition-all duration-300 ease-out hover:bg-slate-400/10 hover:text-slate-300 focus-visible:bg-slate-600/40 focus-visible:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-400 sm:w-[88px]"
                 >
                   <ChevronLeft size={28} aria-hidden="true" />
                 </button>
@@ -233,7 +233,7 @@ export default function ProjectMediaGallery({
                   type="button"
                   onClick={showNext}
                   aria-label="ดูภาพถัดไป"
-                  className="fixed inset-y-0 right-0 z-[110] flex w-14 items-center justify-center text-slate-300 transition-all duration-300 ease-out hover:bg-slate-700/40 hover:text-slate-300  focus-visible:bg-slate-600/40 focus-visible:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-400 sm:w-[88px]"
+                  className="fixed inset-y-0 right-0 z-[110] flex w-14 items-center justify-center text-slate-300 transition-all duration-300 ease-out hover:bg-slate-400/10 hover:text-slate-300  focus-visible:bg-slate-600/40 focus-visible:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-400 sm:w-[88px]"
                 >
                   <ChevronRight size={28} aria-hidden="true" />
                 </button>
