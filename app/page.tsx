@@ -41,13 +41,16 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-line bg-mist">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/70 blur-3xl" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/70 blur-3xl"
+          aria-hidden="true"
+        />
         <div
           className={`${container} relative grid min-h-[570px] grid-cols-[1.15fr_.85fr] items-center gap-[60px] py-[76px] max-md:grid-cols-1 max-md:gap-12 max-md:py-14`}
         >
           <ScrollReveal direction="left">
             <p className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xs font-bold tracking-[.16em] text-primary shadow-sm">
-              <Sparkles size={15} aria-hidden="true" /> E-PORTFOLIO
+              <Sparkles size={15} aria-hidden="true" /> WELCOME
             </p>
             <h1 className="mt-6 text-[clamp(42px,7vw,76px)] font-bold leading-[1.1] tracking-[-.055em]">
               E-Portfolio
@@ -71,10 +74,17 @@ export default function Home() {
               </p>
             </div>
           </ScrollReveal>
-          <ScrollReveal direction="right" delay={100} className="mx-auto w-full max-w-[360px] md:justify-self-end">
+          <ScrollReveal
+            direction="right"
+            delay={100}
+            className="mx-auto w-full max-w-[360px] md:justify-self-end"
+          >
             <div className="relative">
-              <div className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15" aria-hidden="true" />
-              <div className="relative aspect-[4/4.35] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)]">
+              <div
+                className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15"
+                aria-hidden="true"
+              />
+              <div className="relative aspect-[4/4.35] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)] scale-x-[-1]">
                 <Image
                   src="/images/profile.jpg"
                   alt={`ภาพแนะนำตัวของ ${profile.name}`}
@@ -84,10 +94,6 @@ export default function Home() {
                   className="rounded-[1.6rem] object-cover"
                 />
               </div>
-              <div className="absolute -right-3 top-8 rounded-2xl border border-line bg-white px-4 py-3 shadow-md">
-                <p className="text-xs text-muted">ยินดีต้อนรับ</p>
-                <p className="mt-0.5 text-sm font-bold text-ink">เข้าสู่ Portfolio ของฉัน</p>
-              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -95,7 +101,10 @@ export default function Home() {
 
       <section className="py-[100px] max-md:py-[72px]">
         <div className={container}>
-          <ScrollReveal direction="left" className="mb-9 flex items-end justify-between gap-6 max-sm:items-start">
+          <ScrollReveal
+            direction="left"
+            className="mb-9 flex items-end justify-between gap-6 max-sm:items-start"
+          >
             <div>
               <p className={eyebrow}>EXPLORE MY PORTFOLIO</p>
               <h2 className={title}>เลือกดูเรื่องที่สนใจได้เลย</h2>
@@ -111,32 +120,39 @@ export default function Home() {
                 number,
                 icon: Icon,
               }) => (
-                <ScrollReveal key={href} direction={number === "02" ? "up" : number === "01" ? "left" : "right"} delay={number === "01" ? 0 : number === "02" ? 100 : 200} className="h-full">
+                <ScrollReveal
+                  key={href}
+                  direction={
+                    number === "02" ? "up" : number === "01" ? "left" : "right"
+                  }
+                  delay={number === "01" ? 0 : number === "02" ? 100 : 200}
+                  className="h-full"
+                >
                   <Link
                     href={href}
                     className="group relative flex min-h-[250px] h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-6 text-ink transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_18px_40px_-28px_rgba(1,21,62,0.35)] motion-reduce:transition-none"
                   >
-                  <div className="flex items-center justify-between text-slate-400">
-                    <span className="text-[10px] font-bold uppercase tracking-[.16em]">
-                      /{number}
+                    <div className="flex items-center justify-between text-slate-400">
+                      <span className="text-[10px] font-bold uppercase tracking-[.16em]">
+                        /{number}
+                      </span>
+                      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                        <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
+                      </span>
+                    </div>
+                    <h3 className="mt-6 mb-2 text-[22px] font-bold tracking-tight">
+                      {cardTitle}
+                    </h3>
+                    <p className="mb-5 text-sm leading-7 text-muted">
+                      {description}
+                    </p>
+                    <span className="mt-auto flex items-center gap-2 text-sm font-bold text-primary">
+                      {cta}
+                      <ArrowRight
+                        size={14}
+                        className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+                      />
                     </span>
-                    <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                      <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
-                    </span>
-                  </div>
-                  <h3 className="mt-6 mb-2 text-[22px] font-bold tracking-tight">
-                    {cardTitle}
-                  </h3>
-                  <p className="mb-5 text-sm leading-7 text-muted">
-                    {description}
-                  </p>
-                  <span className="mt-auto flex items-center gap-2 text-sm font-bold text-primary">
-                    {cta}
-                    <ArrowRight
-                      size={14}
-                      className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
-                    />
-                  </span>
                   </Link>
                 </ScrollReveal>
               ),
@@ -147,7 +163,10 @@ export default function Home() {
 
       <section className="bg-mist py-[76px]">
         <div className={container}>
-          <ScrollReveal direction="right" className="mb-7 flex items-end justify-between gap-5">
+          <ScrollReveal
+            direction="right"
+            className="mb-7 flex items-end justify-between gap-5"
+          >
             <div>
               <p className={eyebrow}>SELECTED WORK</p>
               <h2 className={`${title} mb-0`}>ผลงานของฉัน</h2>
@@ -161,7 +180,11 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
             {projects.slice(0, 3).map((project, index) => (
-              <ScrollReveal key={project.slug} direction={index % 2 === 0 ? "left" : "right"} delay={index === 0 ? 0 : index === 1 ? 100 : 200}>
+              <ScrollReveal
+                key={project.slug}
+                direction={index % 2 === 0 ? "left" : "right"}
+                delay={index === 0 ? 0 : index === 1 ? 100 : 200}
+              >
                 <ProjectCard project={project} index={index} />
               </ScrollReveal>
             ))}
