@@ -100,7 +100,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-[100px] max-md:py-[72px]">
+      <section className="relative py-[100px] max-md:py-[72px]">
+        <div
+          className="pointer-events-none absolute left-0 top-[150px] z-10 hidden h-[400px] overflow-hidden xl:block"
+          style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
+          aria-hidden="true"
+        >
+          <Image
+            src="/images/arrows/vector3.png"
+            alt=""
+            aria-hidden="true"
+            width={400}
+            height={400}
+            className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 animate-arrow-reveal object-contain motion-reduce:animate-none"
+          />
+        </div>
         <div className={container}>
           <ScrollReveal
             direction="left"
@@ -162,8 +176,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-mist py-[76px]">
-        <div className={container}>
+      <section className="relative overflow-hidden bg-mist py-[76px]">
+        <Image
+          src="/images/arrows/vector-curve.png"
+          alt=""
+          aria-hidden="true"
+          width={400}
+          height={400}
+          className="pointer-events-none absolute bottom-0 right-[-160px] z-0 h-[400px] w-[400px] animate-curve-reveal object-contain object-bottom motion-reduce:animate-none"
+        />
+        <div className={`${container} relative z-10`}>
           <ScrollReveal
             direction="right"
             className="mb-7 flex items-end justify-between gap-5"
