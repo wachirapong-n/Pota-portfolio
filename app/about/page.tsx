@@ -19,8 +19,8 @@ export default function AboutPage() {
         />
         <div className="relative mx-auto grid w-full max-w-[1120px] items-center gap-12 px-6 md:grid-cols-[1fr_0.82fr] md:gap-16 max-sm:px-[18px]">
           <ScrollReveal direction="left">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[0.16em] text-primary shadow-sm">
-              <Sparkles size={15} aria-hidden="true" /> เกี่ยวกับฉัน
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border uppercase border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[0.16em] text-primary shadow-sm">
+              <Sparkles size={15} aria-hidden="true" /> About Me
             </p>
             <h1 className="max-w-[650px] text-[clamp(38px,6vw,64px)] font-bold leading-[1.2] tracking-[-0.04em] text-ink">
               รู้จักตัวตน
