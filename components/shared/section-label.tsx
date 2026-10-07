@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
-import DrawOnViewImage from "@/components/shared/draw-on-view-image";
 
 type SectionLabelProps = {
   children: ReactNode;
@@ -14,14 +14,13 @@ export default function SectionLabel({ children, className = "" }: SectionLabelP
         <Sparkles className="shrink-0" size={18} aria-hidden="true" />
         <span className="leading-none">{children}</span>
       </p>
-      <DrawOnViewImage
+      <Image
         src="/images/arrows/vector3.png"
         alt=""
         aria-hidden="true"
         width={85}
         height={85}
-        revealDirection="left-to-right"
-        className="shrink-0 rotate-[30deg] -scale-y-100 object-contain"
+        className="shrink-0 rotate-[30deg] -scale-y-100 animate-arrow-reveal object-contain motion-reduce:animate-none"
       />
     </div>
   );

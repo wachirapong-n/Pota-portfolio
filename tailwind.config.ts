@@ -34,12 +34,17 @@ const config: Config = {
           "0%": { clipPath: "inset(0 0 0 100%)" },
           "100%": { clipPath: "inset(0 0 0 0)" },
         },
+        "curve-reveal": {
+          "0%": { clipPath: "inset(0 0 0 100%)" },
+          "100%": { clipPath: "inset(0 0 0 0)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 240ms ease-out both",
         float: "float 2.2s ease-in-out infinite",
         "arrow-reveal": "arrow-reveal 2000ms ease-out both",
         "arrow-reveal-reverse": "arrow-reveal-reverse 2000ms ease-out both",
+        "curve-reveal": "curve-reveal 2000ms ease-out both",
       },
     },
   },

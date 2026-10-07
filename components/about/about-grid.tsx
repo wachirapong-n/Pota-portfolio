@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import DrawOnViewImage from "@/components/shared/draw-on-view-image";
+import Image from "next/image";
 import ScrollReveal from "./scroll-reveal";
 
 type AboutGridItem = {
@@ -22,14 +22,13 @@ function InterestSection({ title, items }: AboutGridProps) {
         style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
         aria-hidden="true"
       >
-        <DrawOnViewImage
+        <Image
           src="/images/arrows/vector3.png"
           alt=""
           aria-hidden="true"
           width={400}
           height={400}
-          revealDirection="left-to-right"
-          className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 object-contain"
+          className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 animate-arrow-reveal object-contain motion-reduce:animate-none"
         />
       </div>
 
@@ -43,26 +42,24 @@ function InterestSection({ title, items }: AboutGridProps) {
               {title}
             </h2>
           </div>
-          <DrawOnViewImage
+          <Image
             src="/images/arrows/vector2.png"
             alt=""
             aria-hidden="true"
             width={85}
             height={85}
-            revealDirection="right-to-left"
-            className="ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 object-contain md:block xl:hidden"
+            className="ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 animate-arrow-reveal-reverse object-contain motion-reduce:animate-none md:block xl:hidden"
           />
         </header>
 
         <div className="-mt-5 mb-3 flex justify-start pl-3 md:hidden">
-          <DrawOnViewImage
+          <Image
             src="/images/arrows/vector1.png"
             alt=""
             aria-hidden="true"
             width={72}
             height={72}
-            revealDirection="left-to-right"
-            className="h-[72px] w-[72px] object-contain"
+            className="h-[72px] w-[72px] animate-arrow-reveal object-contain motion-reduce:animate-none"
           />
         </div>
 
