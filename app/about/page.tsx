@@ -30,17 +30,6 @@ export default function AboutPage() {
               เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
               เพื่อพัฒนาการเรียนรู้ให้สนุกและมีความหมายยิ่งขึ้น
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-white bg-white/80 px-4 py-3 text-[22px] text-ink shadow-sm">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <UserRound size={19} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-[22px] text-muted">ชื่อเล่น</span>
-                <span className="font-semibold text-2xl">
-                  {introductionData.nickname}
-                </span>
-              </span>
-            </div>
           </ScrollReveal>
 
           <ScrollReveal
