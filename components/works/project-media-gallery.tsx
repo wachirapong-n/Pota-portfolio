@@ -17,6 +17,7 @@ type ProjectMediaGalleryProps = {
   images: string[];
   youtubeEmbed: string | null;
   video?: string;
+  linkURL?: string;
 };
 
 export default function ProjectMediaGallery({
@@ -24,6 +25,7 @@ export default function ProjectMediaGallery({
   images,
   youtubeEmbed,
   video,
+  linkURL,
 }: ProjectMediaGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -146,7 +148,16 @@ export default function ProjectMediaGallery({
         className="md:col-span-4 md:row-span-1 md:col-start-1 md:row-start-6"
       >
       <div className="flex h-full items-center rounded-2xl border border-line bg-mist p-5 md:px-6">
-        {hasImages ? (
+        {linkURL ? (
+          <a
+            href={linkURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[22px] font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
+          >
+            <ExternalLink size={18} aria-hidden="true" /> เปิดผลงาน
+          </a>
+        ) : hasImages ? (
           <button
             type="button"
             onClick={() => openLightbox(currentIndex)}
@@ -214,7 +225,7 @@ export default function ProjectMediaGallery({
                   type="button"
                   onClick={showPrevious}
                   aria-label="ดูภาพก่อนหน้า"
-                  className="absolute left-0 top-1/2 z-20 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/15 text-white transition hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-3 sm:size-14"
+                  className="fixed inset-y-0 left-0 z-[110] flex w-14 items-center justify-center text-slate-300 transition-all duration-300 ease-out hover:bg-slate-700/40 hover:text-slate-300 focus-visible:bg-slate-600/40 focus-visible:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-400 sm:w-[88px]"
                 >
                   <ChevronLeft size={28} aria-hidden="true" />
                 </button>
@@ -222,7 +233,7 @@ export default function ProjectMediaGallery({
                   type="button"
                   onClick={showNext}
                   aria-label="ดูภาพถัดไป"
-                  className="absolute right-0 top-1/2 z-20 grid size-12 -translate-y-1/2 place-items-center rounded-full bg-white/15 text-white transition hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-3 sm:size-14"
+                  className="fixed inset-y-0 right-0 z-[110] flex w-14 items-center justify-center text-slate-300 transition-all duration-300 ease-out hover:bg-slate-700/40 hover:text-slate-300  focus-visible:bg-slate-600/40 focus-visible:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-slate-400 sm:w-[88px]"
                 >
                   <ChevronRight size={28} aria-hidden="true" />
                 </button>

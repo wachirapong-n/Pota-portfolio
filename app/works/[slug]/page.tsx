@@ -140,6 +140,7 @@ export default async function ProjectDetail({
             images={galleryImages}
             youtubeEmbed={youtubeEmbed}
             video={availableVideo}
+            linkURL={project.linkURL}
           />
 
           {/* B — Project details */}
