@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Heart, Sparkles, Target, UserRound } from "lucide-react";
+import { Sparkles, Target, UserRound } from "lucide-react";
 import {
   aboutGoal,
   gridItemsInterested,
@@ -8,6 +7,7 @@ import {
 } from "@/data/introdcution";
 import ScrollReveal from "@/components/about/scroll-reveal";
 import AboutGrid from "@/components/about/about-grid";
+import DecoratedImage from "@/components/shared/decorated-image";
 
 export default function AboutPage() {
   return (
@@ -37,28 +37,13 @@ export default function AboutPage() {
             delay={100}
             className="mx-auto w-full max-w-[430px]"
           >
-            <div className="relative">
-              <div
-                className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15"
-                aria-hidden="true"
-              />
-              <div className="relative aspect-[4/4.4] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)]">
-                <Image
-                  src="/images/introduce.jpg"
-                  alt={`ภาพแนะนำตัวของ ${introductionData.name}`}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 90vw, 430px"
-                  className="rounded-[1.6rem] object-cover"
-                />
-              </div>
-              <div
-                className="absolute -right-4 top-8 grid h-14 w-14 place-items-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20"
-                aria-hidden="true"
-              >
-                <Heart size={23} />
-              </div>
-            </div>
+            <DecoratedImage
+              src="/images/introduce.jpg"
+              alt={`ภาพแนะนำตัวของ ${introductionData.name}`}
+              priority
+              hasHeart
+              sizes="(max-width: 768px) 90vw, 430px"
+            />
           </ScrollReveal>
         </div>
       </section>
@@ -73,22 +58,11 @@ export default function AboutPage() {
 
           <div className="grid gap-5 md:grid-cols-[0.9fr_1.1fr] md:gap-8">
             <ScrollReveal direction="right" delay={200}>
-              <div className="relative">
-                <div
-                  className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15"
-                  aria-hidden="true"
-                />
-                <div className="relative aspect-[4/4.4] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)]">
-                  <Image
-                    src="/images/introduce2.jpg"
-                    alt={`ภาพแนะนำตัวของ ${introductionData.name}`}
-                    fill
-                    sizes="(max-width: 768px) 90vw, 430px"
-                    className="rounded-[1.6rem] object-cover"
-                  />
-                </div>
-
-              </div>
+              <DecoratedImage
+                src="/images/introduce2.jpg"
+                alt={`ภาพแนะนำตัวเพิ่มเติมของ ${introductionData.name}`}
+                sizes="(max-width: 768px) 90vw, 430px"
+              />
             </ScrollReveal>
             <ScrollReveal direction="left" delay={100}>
               <div className="h-full rounded-3xl bg-ink p-7 text-white md:p-9">

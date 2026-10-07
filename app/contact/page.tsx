@@ -3,6 +3,7 @@ import { ExternalLink, MapPin, Sparkles } from "lucide-react";
 import { profile } from "@/data/profile";
 import { ContactForm } from "@/components/contact/contact-form";
 import ScrollReveal from "@/components/about/scroll-reveal";
+import DecoratedImage from "@/components/shared/decorated-image";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -35,7 +36,19 @@ export default function ContactPage() {
         <div
           className={`${container} grid grid-cols-[.8fr_1.2fr] gap-[78px] max-md:grid-cols-1 max-md:gap-12`}
         >
-          <ScrollReveal direction="right" className="md:col-span-2">
+          <ScrollReveal
+            direction="left"
+            className="mx-auto w-full max-w-[360px] md:h-full md:max-w-none"
+          >
+            <DecoratedImage
+              src="/images/contact.jpg"
+              alt="ภาพประกอบหน้าติดต่อ"
+              sizes="(max-width: 768px) 90vw, 360px"
+              className="md:h-full"
+              frameClassName="aspect-[4/4.4] md:aspect-auto md:h-full md:min-h-[760px]"
+            />
+          </ScrollReveal>
+          <ScrollReveal direction="right">
             <div className="mb-3 text-[20px] font-bold uppercase tracking-[.16em] text-primary">
               Send a note
             </div>

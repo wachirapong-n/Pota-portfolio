@@ -77,12 +77,20 @@ export function ContactForm() {
 
       {fields.map(({ name, label, placeholder }) => (
         <label key={name} className="grid gap-2 text-xl font-bold">
-          {label}
+          <span>
+            {label}
+            <span className="ml-1 text-red-600" aria-hidden="true">
+              *
+            </span>
+            <span className="sr-only"> (จำเป็น)</span>
+          </span>
           {name === "message" ? (
             <textarea
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-[22px] font-normal text-ink placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               rows={5}
               placeholder={placeholder}
+              required
+              aria-required="true"
               aria-invalid={!!errors[name]}
               aria-describedby={errors[name] ? `${name}-error` : undefined}
               {...register(name)}
@@ -92,6 +100,8 @@ export function ContactForm() {
               className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-[22px] font-normal text-ink placeholder:text-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               type={name === "email" ? "email" : "text"}
               placeholder={placeholder}
+              required
+              aria-required="true"
               aria-invalid={!!errors[name]}
               aria-describedby={errors[name] ? `${name}-error` : undefined}
               {...register(name)}
