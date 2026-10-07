@@ -38,7 +38,7 @@ export default function WorksPage() {
               delay={index % 3 === 0 ? 0 : index % 3 === 1 ? 100 : 200}
               className="h-full"
             >
-              <ProjectCard project={project} index={index} showNumber />
+              <ProjectCard project={project} index={index} showNumber showDescription={false} />
             </ScrollReveal>
           ))}
         </div>

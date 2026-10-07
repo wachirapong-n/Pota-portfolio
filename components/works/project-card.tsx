@@ -5,15 +5,19 @@ import Image from "next/image";
 
 const previewColors = ["bg-slate-100", "bg-slate-200/70", "bg-slate-100"];
 
+type ProjectCardProps = {
+  project: Project;
+  index?: number;
+  showNumber?: boolean;
+  showDescription?: boolean;
+};
+
 export function ProjectCard({
   project,
   index = 0,
   showNumber = false,
-}: {
-  project: Project;
-  index?: number;
-  showNumber?: boolean;
-}) {
+  showDescription = true,
+}: ProjectCardProps) {
   return (
     <Link
       href={`/works/${project.slug}`}
@@ -49,9 +53,11 @@ export function ProjectCard({
             className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
           />
         </div>
-        <p className="mt-2 mb-4 text-[21px] leading-7 text-muted line-clamp-3">
-          {project.description}
-        </p>
+        {showDescription && (
+          <p className="mt-2 mb-4 text-[21px] leading-7 text-muted line-clamp-3">
+            {project.description}
+          </p>
+        )}
       </div>
     </Link>
   );
