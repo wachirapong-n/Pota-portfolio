@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { profile } from "@/data/profile";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "หน้าแรก" },
@@ -27,8 +28,14 @@ export function Navbar() {
           aria-label={`${profile.name} home`}
           className="flex items-center gap-3 font-bold"
         >
-          <span className="grid size-[34px] place-items-center bg-primary text-xs tracking-wide text-white">
-            {profile.initials}
+          <span className="grid size-[34px] place-items-center text-xs tracking-wide text-white">
+            <Image
+              src="/images/raccoon.png"
+              alt="Logo"
+              width={34}
+              height={34}
+              className="object-cover"
+            />
           </span>
           <span>{profile.name}</span>
         </Link>
