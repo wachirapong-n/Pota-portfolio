@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/works/project-card";
 import Image from "next/image";
 import ScrollReveal from "@/components/about/scroll-reveal";
 import SectionLabel from "@/components/shared/section-label";
+import KnotOverlay from "@/components/shared/knot-overlay";
 
 const paths = [
   {
@@ -78,20 +79,21 @@ export default function Home() {
             delay={100}
             className="mx-auto w-full max-w-[430px] md:justify-self-end"
           >
-            <div className="relative">
+            <div className="relative rotate-[-4.2deg]">
               <div
                 className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15"
                 aria-hidden="true"
               />
-              <div className="relative aspect-[4/4.35] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)] scale-x-[-1]">
+              <div className="relative aspect-[4/4.35] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)]">
                 <Image
                   src="/images/profile.jpg"
                   alt={`ภาพแนะนำตัวของ ${profile.name}`}
                   fill
                   priority
                   sizes="(max-width: 768px) 85vw, 360px"
-                  className="rounded-[1.6rem] object-cover"
+                  className="scale-x-[-1] rounded-[1.6rem] object-cover"
                 />
+                <KnotOverlay />
               </div>
             </div>
           </ScrollReveal>
@@ -129,27 +131,27 @@ export default function Home() {
                 >
                   <Link
                     href={href}
-                    className="group relative flex min-h-[250px] h-full flex-col overflow-hidden rounded-2xl border border-line bg-white p-6 text-ink transition duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_18px_40px_-28px_rgba(1,21,62,0.35)] motion-reduce:transition-none"
+                    className="group relative flex min-h-[250px] h-full cursor-pointer flex-col overflow-hidden rounded-2xl border border-primary/20 bg-white p-6 text-ink shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white hover:shadow-[0_18px_40px_-24px_rgba(1,21,62,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    <div className="flex items-center justify-between text-slate-400">
+                    <div className="flex items-center justify-between text-slate-400 transition-colors group-hover:text-white/65">
                       <span className="text-[20px] font-bold uppercase tracking-[.16em]">
                         /{number}
                       </span>
-                      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-white/15 group-hover:text-white">
                         <Icon size={22} strokeWidth={1.7} aria-hidden="true" />
                       </span>
                     </div>
                     <h3 className="mt-6 mb-2 text-[24px] font-bold tracking-tight">
                       {cardTitle}
                     </h3>
-                    <p className="mb-5 text-[22px] leading-7 text-muted">
+                    <p className="mb-5 text-[22px] leading-7 text-muted transition-colors group-hover:text-white/80">
                       {description}
                     </p>
-                    <span className="mt-auto flex items-center gap-2 text-[22px] font-bold text-primary">
+                    <span className="mt-auto inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-[21px] font-bold text-primary transition-colors duration-300 group-hover:border-white/35 group-hover:bg-white/10 group-hover:text-white">
                       {cta}
                       <ArrowRight
-                        size={18}
-                        className="transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
+                        size={20}
+                        className="transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none"
                       />
                     </span>
                   </Link>
@@ -172,7 +174,7 @@ export default function Home() {
             </div>
             <Link
               href="/works"
-              className="mb-1 flex items-center gap-2 text-[21px] font-bold text-primary"
+              className="relative mb-1 inline-flex w-fit items-center gap-2 py-1 text-[21px] font-bold text-primary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:content-[''] motion-reduce:after:transition-none hover:after:scale-x-100"
             >
               ดูผลงานทั้งหมด <ArrowRight size={18} />
             </Link>

@@ -41,6 +41,7 @@ export default function AboutPage() {
               alt={`ภาพแนะนำตัวของ ${introductionData.name}`}
               priority
               hasHeart
+              className="rotate-[-4.2deg]"
               sizes="(max-width: 768px) 90vw, 430px"
             />
           </ScrollReveal>
@@ -61,6 +62,8 @@ export default function AboutPage() {
                 src="/images/introduce2.jpg"
                 alt={`ภาพแนะนำตัวเพิ่มเติมของ ${introductionData.name}`}
                 sizes="(max-width: 768px) 90vw, 430px"
+                className="rotate-[4.3deg]"
+                knotPosition="top-left"
               />
             </ScrollReveal>
             <ScrollReveal direction="left" delay={100}>

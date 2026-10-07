@@ -24,7 +24,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[21px] text-slate-200 transition-colors hover:text-white"
+                className="relative inline-flex items-center py-1 text-[21px] text-slate-200 transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] motion-reduce:after:transition-none hover:text-white hover:after:scale-x-100"
               >
                 {link.label}
               </Link>

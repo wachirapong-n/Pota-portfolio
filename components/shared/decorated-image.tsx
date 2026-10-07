@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Heart } from "lucide-react";
+import KnotOverlay from "@/components/shared/knot-overlay";
 
 type DecoratedImageProps = {
   src: string;
@@ -7,6 +8,7 @@ type DecoratedImageProps = {
   sizes: string;
   priority?: boolean;
   hasHeart?: boolean;
+  knotPosition?: "top-left" | "top-right";
   className?: string;
   frameClassName?: string;
 };
@@ -17,6 +19,7 @@ export default function DecoratedImage({
   sizes,
   priority = false,
   hasHeart = false,
+  knotPosition = "top-right",
   className = "",
   frameClassName = "aspect-[4/4.4]",
 }: DecoratedImageProps) {
@@ -37,10 +40,11 @@ export default function DecoratedImage({
           sizes={sizes}
           className="rounded-[1.6rem] object-cover"
         />
+        <KnotOverlay position={knotPosition} />
       </div>
       {hasHeart && (
         <div
-          className="absolute -right-4 top-8 grid h-14 w-14 place-items-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20"
+          className="absolute -left-4 top-8 grid h-14 w-14 place-items-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/20"
           aria-hidden="true"
         >
           <Heart size={23} />

@@ -43,7 +43,7 @@ export default function ContactPage() {
               src="/images/contact.jpg"
               alt="ภาพประกอบหน้าติดต่อ"
               sizes="(max-width: 768px) 90vw, 360px"
-              className="md:h-full"
+              className="rotate-[-4.1deg] md:h-full"
               frameClassName="aspect-[4/4.4] md:aspect-auto md:h-full md:min-h-[760px]"
             />
           </ScrollReveal>
