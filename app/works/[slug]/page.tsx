@@ -113,11 +113,11 @@ export default async function ProjectDetail({
           <ScrollReveal direction="left">
           <Link
             href="/works"
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[13px] font-medium text-slate-600 transition-colors hover:text-primary"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[15px] font-medium text-slate-600 transition-colors hover:text-primary"
           >
             <ArrowLeft size={14} aria-hidden="true" /> กลับไปหน้าผลงาน
           </Link>
-          <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.14em] text-primary shadow-sm">
+          <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold uppercase tracking-[.14em] text-primary shadow-sm">
             <Sparkles size={14} aria-hidden="true" /> {project.category}
           </div>
           <h1 className="mb-4 max-w-[1080px] text-[clamp(36px,6vw,62px)] font-bold leading-tight tracking-[-.04em]">
@@ -145,7 +145,7 @@ export default async function ProjectDetail({
           {/* B — Project details */}
           <ScrollReveal direction="right" className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-1">
           <DetailCard icon={Layers3} title="รายละเอียดผลงาน" className="h-full">
-            <dl className="grid gap-3 text-[13px] leading-5">
+            <dl className="grid gap-3 text-[15px] leading-5">
               <div className="flex items-start gap-2.5">
                 <Tag
                   size={15}
@@ -194,7 +194,7 @@ export default async function ProjectDetail({
           {/* C — My role */}
           <ScrollReveal direction="right" delay={100} className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3">
           <DetailCard icon={BriefcaseBusiness} title="บทบาทของฉัน" className="h-full">
-            <p className="m-0 text-[13px] leading-6 text-muted">
+            <p className="m-0 text-[15px] leading-6 text-muted">
               {project.role}
             </p>
           </DetailCard>
@@ -203,7 +203,7 @@ export default async function ProjectDetail({
           {/* D — What I learned */}
           <ScrollReveal direction="right" delay={200} className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5">
           <DetailCard icon={Lightbulb} title="สิ่งที่ได้เรียนรู้" className="h-full">
-            <p className="m-0 text-[13px] leading-6 text-muted">
+            <p className="m-0 text-[15px] leading-6 text-muted">
               {project.learning}
             </p>
           </DetailCard>

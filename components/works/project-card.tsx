@@ -33,11 +33,11 @@ export function ProjectCard({
       </div>
       <div className={`relative p-5 pb-[22px] ${showNumber ? "pt-8" : ""}`}>
         {showNumber && (
-          <span className="absolute left-5 top-0 z-20 -translate-y-1/2 rounded-full border-2 border-white bg-ink px-3 py-1 text-xs font-bold tracking-[.12em] text-white shadow-sm">
+          <span className="absolute left-5 top-0 z-20 -translate-y-1/2 rounded-full border-2 border-white bg-ink px-3 py-1 text-sm font-bold tracking-[.12em] text-white shadow-sm">
             {project.number}
           </span>
         )}
-        <div className="text-[10px] font-bold uppercase tracking-[.14em] text-primary">
+        <div className="text-[14px] font-bold uppercase tracking-[.14em] text-primary">
           {project.category}
         </div>
         <div className="mt-2 flex items-center justify-between">
@@ -49,7 +49,7 @@ export function ProjectCard({
             className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
           />
         </div>
-        <p className="mt-2 mb-4 text-[13px] leading-6 text-muted line-clamp-3">
+        <p className="mt-2 mb-4 text-[15px] leading-6 text-muted line-clamp-3">
           {project.description}
         </p>
       </div>

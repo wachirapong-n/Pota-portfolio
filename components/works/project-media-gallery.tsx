@@ -125,7 +125,7 @@ export default function ProjectMediaGallery({
                 >
                   <ChevronRight size={22} aria-hidden="true" />
                 </button>
-                <span className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-ink/85 px-3 py-2 text-xs font-semibold text-white backdrop-blur-sm">
+                <span className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-ink/85 px-3 py-2 text-sm font-semibold text-white backdrop-blur-sm">
                   {currentIndex + 1} / {images.length}
                 </span>
               </>
@@ -134,7 +134,7 @@ export default function ProjectMediaGallery({
         ) : (
           <div className="flex flex-col items-center gap-3 px-6 text-center text-slate-500">
             <Play size={32} aria-hidden="true" />
-            <span className="text-sm">ยังไม่มีภาพหรือวิดีโอผลงาน</span>
+            <span className="text-base">ยังไม่มีภาพหรือวิดีโอผลงาน</span>
           </div>
         )}
       </div>
@@ -150,7 +150,7 @@ export default function ProjectMediaGallery({
           <button
             type="button"
             onClick={() => openLightbox(currentIndex)}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-ink"
+            className="inline-flex items-center gap-2 text-base font-semibold text-primary transition-colors hover:text-ink"
           >
             <ZoomIn size={18} aria-hidden="true" /> กดดูรูปภาพเต็ม
           </button>
@@ -159,7 +159,7 @@ export default function ProjectMediaGallery({
             href={video}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
+            className="inline-flex items-center gap-2 text-base font-semibold text-primary underline-offset-4 hover:text-ink hover:underline"
           >
             {youtubeEmbed ? (
               <Play size={17} aria-hidden="true" />
@@ -169,7 +169,7 @@ export default function ProjectMediaGallery({
             {youtubeEmbed ? "ลิงก์วิดีโอ YouTube" : "เปิดวิดีโอผลงาน"}
           </a>
         ) : (
-          <span className="text-sm text-muted">
+          <span className="text-base text-muted">
             ยังไม่มีไฟล์ภาพหรือวิดีโอเพิ่มเติม
           </span>
         )}
@@ -227,7 +227,7 @@ export default function ProjectMediaGallery({
                   <ChevronRight size={28} aria-hidden="true" />
                 </button>
                 <p
-                  className="pb-2 pt-4 text-sm text-white/80"
+                  className="pb-2 pt-4 text-base text-white/80"
                   aria-live="polite"
                 >
                   {lightboxIndex + 1} / {images.length}

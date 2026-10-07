@@ -19,7 +19,7 @@ export default function AboutPage() {
         />
         <div className="relative mx-auto grid w-full max-w-[1120px] items-center gap-12 px-6 md:grid-cols-[1fr_0.82fr] md:gap-16 max-sm:px-[18px]">
           <ScrollReveal direction="left">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xs font-bold tracking-[0.16em] text-primary shadow-sm">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold tracking-[0.16em] text-primary shadow-sm">
               <Sparkles size={15} aria-hidden="true" /> เกี่ยวกับฉัน
             </p>
             <h1 className="max-w-[650px] text-[clamp(38px,6vw,64px)] font-bold leading-[1.2] tracking-[-0.04em] text-ink">
@@ -30,12 +30,12 @@ export default function AboutPage() {
               เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
               เพื่อพัฒนาการเรียนรู้ให้สนุกและมีความหมายยิ่งขึ้น
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-white bg-white/80 px-4 py-3 text-sm text-ink shadow-sm">
+            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-white bg-white/80 px-4 py-3 text-base text-ink shadow-sm">
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
                 <UserRound size={19} aria-hidden="true" />
               </span>
               <span>
-                <span className="block text-sm text-muted">ชื่อเล่น</span>
+                <span className="block text-base text-muted">ชื่อเล่น</span>
                 <span className="font-semibold text-lg">
                   {introductionData.nickname}
                 </span>
@@ -95,13 +95,13 @@ export default function AboutPage() {
                 <div className="mt-8 h-px bg-white/15" />
                 <dl className="mt-6 grid gap-5 sm:grid-cols-2">
                   <div>
-                    <dt className="text-xs text-white/60">สาขาวิชา</dt>
+                    <dt className="text-sm text-white/60">สาขาวิชา</dt>
                     <dd className="mt-1 font-semibold">
                       {introductionData.major}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-xs text-white/60">รหัสนักศึกษา</dt>
+                    <dt className="text-sm text-white/60">รหัสนักศึกษา</dt>
                     <dd className="mt-1 font-semibold">
                       {introductionData.studentId}
                     </dd>
@@ -119,7 +119,7 @@ export default function AboutPage() {
                   <span className="mt-0.5 text-primary">
                     <Sparkles size={19} aria-hidden="true" />
                   </span>
-                  <p className="text-sm leading-7 text-ink">
+                  <p className="text-base leading-7 text-ink">
                     เชื่อว่าการเรียนรู้ที่ดีเกิดขึ้นได้
                     เมื่อเนื้อหาและสื่อถูกออกแบบให้เข้าใจง่ายและเข้าถึงผู้เรียน
                   </p>
@@ -145,7 +145,7 @@ export default function AboutPage() {
                 aria-hidden="true"
               />
               <div className="relative max-w-[760px] ">
-                <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white/90">
+                <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-base font-semibold text-white/90">
                   <Target size={16} aria-hidden="true" /> เป้าหมายของฉัน
                 </span>
                 <h2 className="text-3xl font-bold leading-snug md:text-4xl">
