@@ -107,7 +107,7 @@ export default function Home() {
           >
             <div>
               <p className={eyebrow}>EXPLORE MY PORTFOLIO</p>
-              <h2 className={title}>เลือกดูเรื่องที่สนใจได้เลย</h2>
+              <h2 className={title}>เลือกดูเรื่องที่สนใจ</h2>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
@@ -168,7 +168,7 @@ export default function Home() {
             className="mb-7 flex items-end justify-between gap-5"
           >
             <div>
-              <p className={eyebrow}>SELECTED WORK</p>
+              <p className={eyebrow}>MY WORKS</p>
               <h2 className={`${title} mb-0`}>ผลงานของฉัน</h2>
             </div>
             <Link
