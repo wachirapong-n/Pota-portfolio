@@ -28,7 +28,7 @@ export function Navbar() {
           aria-label={`${profile.name} home`}
           className="flex items-center gap-3 font-bold"
         >
-          <span className="grid size-[34px] place-items-center text-sm tracking-wide text-white">
+          <span className="grid size-[34px] place-items-center text-xl tracking-wide text-white">
             <Image
               src="/images/raccoon.png"
               alt="Logo"
@@ -45,7 +45,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               aria-current={active(link.href) ? "page" : undefined}
-              className={`text-[15px] transition-colors hover:text-primary ${active(link.href) ? "font-semibold text-primary" : "text-slate-600"}`}
+              className={`text-[21px] transition-colors hover:text-primary ${active(link.href) ? "font-semibold text-primary" : "text-slate-600"}`}
             >
               {link.label}
             </Link>
@@ -71,7 +71,7 @@ export function Navbar() {
               href={link.href}
               aria-current={active(link.href) ? "page" : undefined}
               onClick={() => setOpen(false)}
-              className={`text-base hover:text-primary ${active(link.href) ? "font-semibold text-primary" : "text-slate-600"}`}
+              className={`text-[22px] hover:text-primary ${active(link.href) ? "font-semibold text-primary" : "text-slate-600"}`}
             >
               {link.label}
             </Link>

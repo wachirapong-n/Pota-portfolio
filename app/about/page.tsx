@@ -19,24 +19,24 @@ export default function AboutPage() {
         />
         <div className="relative mx-auto grid w-full max-w-[1120px] items-center gap-12 px-6 md:grid-cols-[1fr_0.82fr] md:gap-16 max-sm:px-[18px]">
           <ScrollReveal direction="left">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold tracking-[0.16em] text-primary shadow-sm">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[0.16em] text-primary shadow-sm">
               <Sparkles size={15} aria-hidden="true" /> เกี่ยวกับฉัน
             </p>
             <h1 className="max-w-[650px] text-[clamp(38px,6vw,64px)] font-bold leading-[1.2] tracking-[-0.04em] text-ink">
               รู้จักตัวตน
               <span className="mt-1 block text-primary">และเส้นทางของฉัน</span>
             </h1>
-            <p className="mt-6 max-w-[570px] text-base leading-8 text-muted md:text-lg">
+            <p className="mt-6 max-w-[570px] text-[22px] leading-8 text-muted md:text-2xl lg:text-2xl">
               เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
               เพื่อพัฒนาการเรียนรู้ให้สนุกและมีความหมายยิ่งขึ้น
             </p>
-            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-white bg-white/80 px-4 py-3 text-base text-ink shadow-sm">
+            <div className="mt-8 inline-flex items-center gap-3 rounded-2xl border border-white bg-white/80 px-4 py-3 text-[22px] text-ink shadow-sm">
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
                 <UserRound size={19} aria-hidden="true" />
               </span>
               <span>
-                <span className="block text-base text-muted">ชื่อเล่น</span>
-                <span className="font-semibold text-lg">
+                <span className="block text-[22px] text-muted">ชื่อเล่น</span>
+                <span className="font-semibold text-2xl">
                   {introductionData.nickname}
                 </span>
               </span>
@@ -95,13 +95,13 @@ export default function AboutPage() {
                 <div className="mt-8 h-px bg-white/15" />
                 <dl className="mt-6 grid gap-5 sm:grid-cols-2">
                   <div>
-                    <dt className="text-sm text-white/60">สาขาวิชา</dt>
+                    <dt className="text-xl text-white/60">สาขาวิชา</dt>
                     <dd className="mt-1 font-semibold">
                       {introductionData.major}
                     </dd>
                   </div>
                   <div>
-                    <dt className="text-sm text-white/60">รหัสนักศึกษา</dt>
+                    <dt className="text-xl text-white/60">รหัสนักศึกษา</dt>
                     <dd className="mt-1 font-semibold">
                       {introductionData.studentId}
                     </dd>
@@ -112,14 +112,14 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right" delay={200}>
               <div className="flex h-full flex-col justify-center rounded-3xl border border-line bg-white p-7 md:p-9">
-                <p className="text-lg leading-9 text-muted">
+                <p className="text-2xl leading-9 text-muted">
                   {introductionData.description}
                 </p>
                 <div className="mt-7 flex items-start gap-3 rounded-2xl bg-mist p-5">
                   <span className="mt-0.5 text-primary">
                     <Sparkles size={19} aria-hidden="true" />
                   </span>
-                  <p className="text-base leading-7 text-ink">
+                  <p className="text-[22px] leading-7 text-ink">
                     เชื่อว่าการเรียนรู้ที่ดีเกิดขึ้นได้
                     เมื่อเนื้อหาและสื่อถูกออกแบบให้เข้าใจง่ายและเข้าถึงผู้เรียน
                   </p>
@@ -145,13 +145,13 @@ export default function AboutPage() {
                 aria-hidden="true"
               />
               <div className="relative max-w-[760px] ">
-                <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-base font-semibold text-white/90">
+                <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[22px] font-semibold text-white/90">
                   <Target size={16} aria-hidden="true" /> เป้าหมายของฉัน
                 </span>
                 <h2 className="text-3xl font-bold leading-snug md:text-4xl">
                   เติบโตไปพร้อมกับการสร้างสรรค์สิ่งที่มีคุณค่า
                 </h2>
-                <p className="mt-5 text-base leading-8 text-white/75 md:text-lg">
+                <p className="mt-5 text-[22px] leading-8 text-white/75 md:text-2xl">
                   {aboutGoal.goal}
                 </p>
               </div>

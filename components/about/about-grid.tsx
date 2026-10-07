@@ -34,7 +34,7 @@ export default function AboutGrid({ title, items }: AboutGridProps) {
                   sizes="80px"
                 />
               </div>
-              <h3 className="text-lg font-bold text-ink">{item.title}</h3>
+              <h3 className="text-2xl font-bold text-ink">{item.title}</h3>
               <p className="leading-7 text-muted">{item.description}</p>
             </article>
           </ScrollReveal>

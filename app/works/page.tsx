@@ -17,13 +17,13 @@ export default function WorksPage() {
         <div className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-white/70 blur-3xl" aria-hidden="true" />
         <div className={`${container} relative`}>
           <ScrollReveal direction="left">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-bold tracking-[.16em] text-primary shadow-sm">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold tracking-[.16em] text-primary shadow-sm">
               <Sparkles size={15} aria-hidden="true" /> SELECTED WORK
             </p>
           <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold leading-tight tracking-[-.05em]">
             ผลงานของฉัน
           </h1>
-          <p className="max-w-[650px] text-base leading-8 text-muted md:text-lg">
+          <p className="max-w-[650px] text-[22px] leading-8 text-muted md:text-2xl">
             รวบรวมผลงานที่ได้เรียนรู้และสร้างสรรค์ตลอดการศึกษาเพื่อพัฒนาทักษะและต่อยอดสู่อนาคต
           </p>
           </ScrollReveal>

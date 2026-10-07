@@ -13,9 +13,9 @@ export function Footer() {
     <footer className="bg-ink py-12 text-white">
       <div className="mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
         <div className="flex flex-wrap justify-between gap-9 pb-9">
-          <div className="max-w-[350px]">
-            <div className="text-lg font-bold">{profile.name}</div>
-            <p className="mt-2 text-[15px] leading-7 text-slate-300">
+          <div className="max-w-[400px]">
+            <div className="text-2xl font-bold">{profile.name}</div>
+            <p className="mt-2 text-[21px] leading-7 text-slate-300">
               “เรียนรู้ สร้างสรรค์ และประยุกต์ใช้เทคโนโลยี
               เพื่อพัฒนาการเรียนรู้”
             </p>
@@ -28,14 +28,14 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[15px] text-slate-200 transition-colors hover:text-white"
+                className="text-[21px] text-slate-200 transition-colors hover:text-white"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
         </div>
-        <div className="flex flex-wrap justify-between gap-2 border-t border-slate-600 pt-5 text-[14px] text-slate-400">
+        <div className="flex flex-wrap justify-between gap-2 border-t border-slate-600 pt-5 text-[20px] text-slate-400">
           <span>
             © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </span>
