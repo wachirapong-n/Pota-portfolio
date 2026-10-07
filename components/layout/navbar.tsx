@@ -45,7 +45,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               aria-current={active(link.href) ? "page" : undefined}
-              className={`text-[21px] transition-colors hover:text-primary ${active(link.href) ? "font-semibold text-primary" : "text-slate-600"}`}
+              className={`relative inline-flex items-center py-1 text-[21px] transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:bg-primary after:transition-transform after:duration-300 after:content-[''] motion-reduce:after:transition-none hover:text-primary hover:after:scale-x-100 ${active(link.href) ? "font-semibold text-primary after:scale-x-100" : "text-slate-600 after:scale-x-0"}`}
             >
               {link.label}
             </Link>
@@ -71,7 +71,7 @@ export function Navbar() {
               href={link.href}
               aria-current={active(link.href) ? "page" : undefined}
               onClick={() => setOpen(false)}
-              className={`text-[22px] hover:text-primary ${active(link.href) ? "font-semibold text-primary" : "text-slate-600"}`}
+              className={`relative inline-flex w-fit items-center py-1 text-[22px] transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:bg-primary after:transition-transform after:duration-300 after:content-[''] motion-reduce:after:transition-none hover:text-primary hover:after:scale-x-100 ${active(link.href) ? "font-semibold text-primary after:scale-x-100" : "text-slate-600 after:scale-x-0"}`}
             >
               {link.label}
             </Link>

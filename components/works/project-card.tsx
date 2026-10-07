@@ -29,7 +29,7 @@ export function ProjectCard({
       >
         <Image
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
           src={project.coverImage || project.image || "/images/profile.jpg"}
           alt={project.title}
           sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"

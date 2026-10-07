@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { CheckCircle2, Info, Send } from "lucide-react";
+import { CheckCircle2, CircleAlert, Info, Loader2, Send } from "lucide-react";
 
 const schema = z.object({
   name: z.string().trim().min(2, "กรุณากรอกชื่ออย่างน้อย 2 ตัวอักษร"),
@@ -121,16 +121,25 @@ export function ContactForm() {
 
       <button
         disabled={isSubmitting}
+        aria-busy={isSubmitting}
         className="inline-flex min-h-14 items-center justify-center gap-2 justify-self-start rounded-lg bg-primary px-6 text-[22px] font-semibold text-white transition hover:bg-primary/90 disabled:cursor-wait disabled:opacity-75"
       >
         {isSubmitting ? "กำลังส่งข้อความ…" : "ส่งข้อความ"}
-        <Send size={22} aria-hidden="true" />
+        {isSubmitting ? (
+          <Loader2
+            size={22}
+            className="animate-spin motion-reduce:animate-none"
+            aria-hidden="true"
+          />
+        ) : (
+          <Send size={22} aria-hidden="true" />
+        )}
       </button>
 
       {submitState === "success" && (
         <div
           role="status"
-          className="flex gap-3 rounded-xl bg-emerald-50 p-4 text-[21px] leading-7 text-emerald-800"
+          className="flex animate-fade-in-up gap-3 rounded-xl bg-emerald-50 p-4 text-[21px] leading-7 text-emerald-800 motion-reduce:animate-none"
         >
           <CheckCircle2
             size={24}
@@ -143,8 +152,13 @@ export function ContactForm() {
       {submitState === "error" && (
         <div
           role="alert"
-          className="rounded-xl bg-red-50 p-4 text-xl leading-7 text-red-800"
+          className="flex animate-fade-in-up gap-3 rounded-xl bg-red-50 p-4 text-xl leading-7 text-red-800 motion-reduce:animate-none"
         >
+          <CircleAlert
+            size={24}
+            className="mt-1 shrink-0"
+            aria-hidden="true"
+          />
           {submitError}
         </div>
       )}
