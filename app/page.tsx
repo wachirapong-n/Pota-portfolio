@@ -77,7 +77,7 @@ export default function Home() {
           <ScrollReveal
             direction="right"
             delay={100}
-            className="mx-auto w-full max-w-[360px] md:justify-self-end"
+            className="mx-auto w-full max-w-[430px] md:justify-self-end"
           >
             <div className="relative">
               <div
