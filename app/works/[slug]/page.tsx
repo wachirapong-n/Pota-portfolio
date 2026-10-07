@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   ArrowLeft,
   BriefcaseBusiness,
-  ExternalLink,
-  Image as ImageIcon,
   Layers3,
   Lightbulb,
-  Play,
   Shapes,
   Tag,
   Wrench,
-  ZoomIn,
+  Sparkles,
 } from "lucide-react";
 import { projects } from "@/data/projects";
+import ProjectMediaGallery from "@/components/works/project-media-gallery";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -70,7 +67,7 @@ function DetailCard({
 }) {
   return (
     <section
-      className={`rounded-md border border-line bg-white p-5 md:p-6 ${className}`}
+      className={`rounded-2xl border border-line bg-white p-5 md:p-6 ${className}`}
     >
       <h2 className="mb-4 flex items-center gap-2.5 text-base font-bold text-ink">
         <Icon size={18} aria-hidden="true" className="shrink-0 text-primary" />
@@ -91,33 +88,41 @@ export default async function ProjectDetail({
   if (!project) notFound();
 
   const youtubeEmbed = project.video ? getYoutubeEmbedUrl(project.video) : null;
-  const imageAvailable = project.image
-    ? isPublicAssetAvailable(project.image)
-    : false;
-  const videoAvailable = project.video
-    ? Boolean(youtubeEmbed || isPublicAssetAvailable(project.video))
-    : false;
-  const extraImages = (project.gallery ?? [])
-    .filter(isPublicAssetAvailable)
-    .slice(0, 3);
+  const galleryImages = [
+    ...new Set(
+      [project.image, ...(project.gallery ?? [])].filter(
+        (image): image is string =>
+          typeof image === "string" && isPublicAssetAvailable(image),
+      ),
+    ),
+  ];
+  const availableVideo =
+    project.video && (youtubeEmbed || isPublicAssetAvailable(project.video))
+      ? project.video
+      : undefined;
 
   return (
     <>
-      <section className="bg-mist py-[76px] max-md:pt-[54px]">
-        <div className={container}>
+      <section className="relative overflow-hidden bg-mist py-[76px] max-md:py-[54px]">
+        <div
+          className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-white/70 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className={`${container} relative`}>
           <Link
             href="/works"
-            className="mb-9 inline-flex items-center gap-2 text-[13px] text-slate-600 transition-colors hover:text-primary"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[13px] font-medium text-slate-600 transition-colors hover:text-primary"
           >
             <ArrowLeft size={14} aria-hidden="true" /> กลับไปหน้าผลงาน
           </Link>
-          <div className="text-[11px] font-bold uppercase tracking-[.16em] text-primary">
-            {project.category}
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.14em] text-primary shadow-sm">
+            <Sparkles size={14} aria-hidden="true" /> {project.category}
           </div>
-          <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">
-            {project.number} | {project.title}
+          <h1 className="mb-4 max-w-[1080px] text-[clamp(36px,6vw,62px)] font-bold leading-tight tracking-[-.04em]">
+            <span className="mr-3 text-primary">{project.number} | </span>
+            {project.title}
           </h1>
-          <p className="max-w-[600px] text-[15px] leading-7 text-muted">
+          <p className="max-w-[880px] text-base leading-8 text-muted md:text-lg lg:text-xl">
             {project.description}
           </p>
         </div>
@@ -126,50 +131,19 @@ export default async function ProjectDetail({
       {/* SECTION 2: A–E project layout */}
       <section className={`${container} py-10 md:py-[52px]`}>
         <div className="grid grid-cols-1 gap-4 md:min-h-[720px] md:grid-cols-6 md:grid-rows-6">
-          {/* A — Main image or video */}
-          <div className="relative col-span-1 grid min-h-[320px] place-items-center overflow-hidden rounded-md bg-slate-100 md:col-span-4 md:row-span-5 md:min-h-0">
-            {youtubeEmbed ? (
-              <iframe
-                src={youtubeEmbed}
-                title={`วิดีโอผลงาน ${project.title}`}
-                className="absolute inset-0 size-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            ) : project.video && videoAvailable ? (
-              <video
-                className="absolute inset-0 size-full bg-black object-contain"
-                src={project.video}
-                poster={imageAvailable ? project.image : undefined}
-                controls
-                preload="metadata"
-                aria-label={`วิดีโอผลงาน ${project.title}`}
-              >
-                เบราว์เซอร์นี้ไม่รองรับวิดีโอ
-              </video>
-            ) : project.image && imageAvailable ? (
-              <Image
-                src={project.image}
-                alt={`ภาพผลงาน ${project.title}`}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 66vw"
-                className="object-contain"
-              />
-            ) : (
-              <div className="flex flex-col items-center gap-3 px-6 text-center text-slate-500">
-                <ImageIcon size={32} aria-hidden="true" />
-                <span className="text-sm">ยังไม่มีภาพหรือวิดีโอผลงาน</span>
-              </div>
-            )}
-          </div>
+          {/* A and E — main carousel and full-screen action */}
+          <ProjectMediaGallery
+            title={project.title}
+            images={galleryImages}
+            youtubeEmbed={youtubeEmbed}
+            video={availableVideo}
+          />
 
           {/* B — Project details */}
           <DetailCard
             icon={Layers3}
             title="รายละเอียดผลงาน"
-            className="md:col-span-2 md:row-span-2"
+            className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-1"
           >
             <dl className="grid gap-3 text-[13px] leading-5">
               <div className="flex items-start gap-2.5">
@@ -220,7 +194,7 @@ export default async function ProjectDetail({
           <DetailCard
             icon={BriefcaseBusiness}
             title="บทบาทของฉัน"
-            className="md:col-span-2 md:row-span-2"
+            className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3"
           >
             <p className="m-0 text-[13px] leading-6 text-muted">
               {project.role}
@@ -231,7 +205,7 @@ export default async function ProjectDetail({
           <DetailCard
             icon={Lightbulb}
             title="สิ่งที่ได้เรียนรู้"
-            className="md:col-span-2 md:row-span-2"
+            className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5"
           >
             <p className="m-0 text-[13px] leading-6 text-muted">
               {project.learning}
@@ -239,73 +213,7 @@ export default async function ProjectDetail({
           </DetailCard>
 
           {/* E — Open full image or video link */}
-          <div className="flex items-center rounded-md border border-line bg-mist p-5 md:col-span-4 md:row-span-1 md:px-6">
-            {project.video && videoAvailable ? (
-              <a
-                href={project.video}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline-offset-4 hover:underline"
-              >
-                {youtubeEmbed ? (
-                  <Play size={17} aria-hidden="true" />
-                ) : (
-                  <ExternalLink size={17} aria-hidden="true" />
-                )}
-                {youtubeEmbed ? "ลิงก์วิดีโอ YouTube" : "เปิดวิดีโอผลงาน"}
-              </a>
-            ) : project.image && imageAvailable ? (
-              <a
-                href={project.image}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-primary underline-offset-4 hover:underline"
-              >
-                <ZoomIn size={18} aria-hidden="true" /> กดดูรูปภาพเต็ม
-              </a>
-            ) : (
-              <span className="text-sm text-muted">
-                ยังไม่มีไฟล์ภาพหรือวิดีโอเพิ่มเติม
-              </span>
-            )}
-          </div>
         </div>
-
-        {extraImages.length > 0 && (
-          <section className="mt-12">
-            <h2 className="mb-5 flex items-center gap-2.5 text-xl font-bold tracking-tight text-ink">
-              <ImageIcon
-                size={20}
-                aria-hidden="true"
-                className="text-primary"
-              />
-              ภาพตัวอย่างเพิ่มเติม
-            </h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {extraImages.map((image, index) => (
-                <a
-                  key={`${image}-${index}`}
-                  href={image}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`เปิดภาพตัวอย่าง ${index + 1} แบบเต็มขนาด`}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-md border border-line bg-slate-100"
-                >
-                  <Image
-                    src={image}
-                    alt={`${project.title} ภาพตัวอย่าง ${index + 1}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                  <span className="absolute right-3 bottom-3 grid size-9 place-items-center rounded-full bg-white/90 text-primary shadow-sm">
-                    <ZoomIn size={17} />
-                  </span>
-                </a>
-              ))}
-            </div>
-          </section>
-        )}
       </section>
     </>
   );
