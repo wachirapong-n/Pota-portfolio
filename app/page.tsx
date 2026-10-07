@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, User, Layers3, Mail, Sparkles, Heart } from "lucide-react";
 import { profile } from "@/data/profile";
-import { projects } from "@/data/projects";
+import { previewProjects, projects } from "@/data/projects";
 import { ProjectCard } from "@/components/works/project-card";
 import Image from "next/image";
 import ScrollReveal from "@/components/about/scroll-reveal";
@@ -179,7 +179,7 @@ export default function Home() {
             </Link>
           </ScrollReveal>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
-            {projects.slice(0, 3).map((project, index) => (
+            {previewProjects.slice(0, 3).map((project, index) => (
               <ScrollReveal
                 key={project.slug}
                 direction={index % 2 === 0 ? "left" : "right"}

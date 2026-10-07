@@ -54,7 +54,7 @@ export function ProjectCard({
           />
         </div>
         {showDescription && (
-          <p className="mt-2 mb-4 text-[21px] leading-7 text-muted line-clamp-3">
+          <p className="mt-2 mb-4 text-[21px] leading-7 text-muted line-clamp-2">
             {project.description}
           </p>
         )}
