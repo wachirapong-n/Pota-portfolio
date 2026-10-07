@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { ArrowRight, User, Layers3, Mail, Heart } from "lucide-react";
 import { profile } from "@/data/profile";
-import { previewProjects, projects } from "@/data/projects";
+import { previewProjects } from "@/data/projects";
 import { ProjectCard } from "@/components/works/project-card";
 import Image from "next/image";
 import ScrollReveal from "@/components/about/scroll-reveal";
 import SectionLabel from "@/components/shared/section-label";
 import KnotOverlay from "@/components/shared/knot-overlay";
+import DrawOnViewImage from "@/components/shared/draw-on-view-image";
 
 const paths = [
   {
@@ -101,20 +102,21 @@ export default function Home() {
       </section>
 
       <section className="relative py-[100px] max-md:py-[72px]">
-        <div
-          className="pointer-events-none absolute left-0 top-[150px] z-10 hidden h-[400px] overflow-hidden xl:block"
+          <div
+            className="pointer-events-none absolute left-0 top-[150px] z-10 hidden h-[400px] overflow-hidden xl:block"
           style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
           aria-hidden="true"
         >
-          <Image
+          <DrawOnViewImage
             src="/images/arrows/vector3.png"
             alt=""
             aria-hidden="true"
             width={400}
             height={400}
-            className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 animate-arrow-reveal object-contain motion-reduce:animate-none"
-          />
-        </div>
+            revealDirection="left-to-right"
+            className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 object-contain"
+            />
+          </div>
         <div className={container}>
           <ScrollReveal
             direction="left"
@@ -124,7 +126,27 @@ export default function Home() {
               <p className={eyebrow}>EXPLORE MY PORTFOLIO</p>
               <h2 className={title}>เลือกดูเรื่องที่สนใจ</h2>
             </div>
+            <DrawOnViewImage
+              src="/images/arrows/vector2.png"
+              alt=""
+              aria-hidden="true"
+              width={85}
+              height={85}
+              revealDirection="right-to-left"
+              className="ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 object-contain md:block xl:hidden"
+            />
           </ScrollReveal>
+          <div className="-mt-5 mb-3 flex justify-start pl-3 md:hidden">
+            <DrawOnViewImage
+              src="/images/arrows/vector1.png"
+              alt=""
+              aria-hidden="true"
+              width={72}
+              height={72}
+              revealDirection="left-to-right"
+              className="h-[72px] w-[72px] object-contain"
+            />
+          </div>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
             {paths.map(
               ({
@@ -177,13 +199,14 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-mist py-[76px]">
-        <Image
+        <DrawOnViewImage
           src="/images/arrows/vector-curve.png"
           alt=""
           aria-hidden="true"
           width={400}
           height={400}
-          className="pointer-events-none absolute bottom-0 right-[-160px] z-0 h-[400px] w-[400px] animate-curve-reveal object-contain object-bottom motion-reduce:animate-none"
+          revealDirection="right-to-left"
+          className="pointer-events-none absolute bottom-0 right-[-160px] z-0 hidden h-[400px] w-[400px] object-contain object-bottom xl:block"
         />
         <div className={`${container} relative z-10`}>
           <ScrollReveal
