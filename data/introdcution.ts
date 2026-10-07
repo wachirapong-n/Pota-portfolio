@@ -1,3 +1,12 @@
+import {
+  Cpu,
+  GraduationCap,
+  Music2,
+  Palette,
+  PanelsTopLeft,
+  UsersRound,
+} from "lucide-react";
+
 export const introductionData = {
   name: "นางสาวณิชารีย์ โปธา",
   description:
@@ -10,17 +19,17 @@ export const introductionData = {
 
 export const gridItemsInterested = [
   {
-    image: "/images/profile.jpg",
+    icon: Palette,
     title: "Media Design",
     description: "การออกแบบและสร้างสรรค์สื่อ",
   },
   {
-    image: "/images/profile.jpg",
+    icon: GraduationCap,
     title: "Educational Technology",
     description: "การประยุกต์ใช้เทคโนโลยีเพื่อการศึกษา",
   },
   {
-    image: "/images/profile.jpg",
+    icon: Music2,
     title: "Music",
     description: "การฟังเพลงเพื่อสร้างแรงบันดาลใจและผ่อนคลาย",
   },
@@ -28,17 +37,17 @@ export const gridItemsInterested = [
 
 export const gridItemsISkill = [
   {
-    image: "/images/profile.jpg",
+    icon: PanelsTopLeft,
     title: "Media Design",
     description: "การออกแบบและนำเสนอข้อมูลผ่านสื่อที่หลากหลาย",
   },
   {
-    image: "/images/profile.jpg",
+    icon: UsersRound,
     title: "Teamwork",
     description: "การทำงานร่วมกับผู้อื่นและการแลกเปลี่ยนความคิดเห็น",
   },
   {
-    image: "/images/profile.jpg",
+    icon: Cpu,
     title: "Technology",
     description:
       "การใช้เทคโนโลยีและเครื่องมือดิจิทัลเพื่อการเรียนรู้และสร้างสรรค์ผลงาน",

@@ -72,6 +72,24 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <div className="grid gap-5 md:grid-cols-[0.9fr_1.1fr] md:gap-8">
+            <ScrollReveal direction="right" delay={200}>
+              <div className="relative">
+                <div
+                  className="absolute -bottom-4 -left-4 h-full w-full rounded-[2rem] border-2 border-primary/15"
+                  aria-hidden="true"
+                />
+                <div className="relative aspect-[4/4.4] overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_18px_55px_-30px_rgba(1,21,62,0.45)]">
+                  <Image
+                    src="/images/introduce2.jpg"
+                    alt={`ภาพแนะนำตัวของ ${introductionData.name}`}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 430px"
+                    className="rounded-[1.6rem] object-cover"
+                  />
+                </div>
+
+              </div>
+            </ScrollReveal>
             <ScrollReveal direction="left" delay={100}>
               <div className="h-full rounded-3xl bg-ink p-7 text-white md:p-9">
                 <div className="mb-8 grid h-12 w-12 place-items-center rounded-2xl bg-white/10 text-white">
@@ -96,23 +114,6 @@ export default function AboutPage() {
                     </dd>
                   </div>
                 </dl>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={200}>
-              <div className="flex h-full flex-col justify-center rounded-3xl border border-line bg-white p-7 md:p-9">
-                <p className="text-2xl leading-9 text-muted">
-                  {introductionData.description}
-                </p>
-                <div className="mt-7 flex items-start gap-3 rounded-2xl bg-mist p-5">
-                  <span className="mt-0.5 text-primary">
-                    <Sparkles size={19} aria-hidden="true" />
-                  </span>
-                  <p className="text-[22px] leading-7 text-ink">
-                    เชื่อว่าการเรียนรู้ที่ดีเกิดขึ้นได้
-                    เมื่อเนื้อหาและสื่อถูกออกแบบให้เข้าใจง่ายและเข้าถึงผู้เรียน
-                  </p>
-                </div>
               </div>
             </ScrollReveal>
           </div>
