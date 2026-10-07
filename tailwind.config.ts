@@ -34,7 +34,7 @@ const config: Config = {
       animation: {
         "fade-in-up": "fade-in-up 240ms ease-out both",
         float: "float 2.2s ease-in-out infinite",
-        "arrow-reveal": "arrow-reveal 3000ms ease-out both",
+        "arrow-reveal": "arrow-reveal 2000ms ease-out both",
       },
     },
   },
