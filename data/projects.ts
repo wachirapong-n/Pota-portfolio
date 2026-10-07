@@ -23,7 +23,7 @@ export const projects: Project[] = [
     description:
       "อินโฟกราฟิกแนะนำการใช้งาน ChatGPT เพื่อทำความรู้จักเครื่องมือ AI และแนวทางการใช้งานอย่างเหมาะสม",
     category: "Infographic",
-    tools: ["ChatGPT"],
+    tools: ["Canva"],
     projectType: "Infographic",
     learning:
       "เรียนรู้การใช้งาน ChatGPT และการเขียน Prompt ให้ได้ผลลัพธ์ตรงตามต้องการ",
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description:
       "อินโฟกราฟิกสรุปสาระสำคัญของทฤษฎีพฤติกรรมนิยม พร้อมเรียบเรียงเนื้อหาให้อยู่ในรูปแบบที่เข้าใจง่าย",
     category: "Infographic",
-    tools: [],
+    tools: ["Canva"],
     projectType: "Infographic",
     learning:
       "เรียนรู้การวิเคราะห์และสรุปสาระสำคัญ พร้อมนำเสนอข้อมูลให้เข้าใจง่าย",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
       "วิดีโอแนะนำการใช้งานแอปพลิเคชัน Quiver ที่เปลี่ยนภาพระบายสี 2 มิติให้กลายเป็นโมเดล 3 มิติ สร้างประสบการณ์การเรียนรู้ผ่านเทคโนโลยี AR",
     video: "https://youtu.be/vV-0dRyaszs?si=DayOXBj7swnlpyvb",
     category: "Video",
-    tools: ["Quiver"],
+    tools: ["Google Flow AI"],
     projectType: "Educational Video",
     learning:
       "เรียนรู้การประยุกต์ใช้ AR เพื่อสร้างสื่อและประสบการณ์การเรียนรู้ที่น่าสนใจ",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     description:
       "แอปพลิเคชันสื่อการเรียนรู้รายวิชาหน้าที่พลเมือง ระดับชั้นประถมศึกษาปีที่ 1 ประกอบด้วยวิดีโอการเรียนรู้และเกมตอบคำถามเพื่อทบทวนความรู้และสะสมคะแนน โดยมุ่งส่งเสริมการเรียนรู้เชิงรุก (Active Learning)",
     category: "EdTech Innovation",
-    tools: [],
+    tools: ["App Script", "Gemini"],
     projectType: "Web Application",
     learning: "เรียนรู้การพัฒนาเว็บแอปพลิเคชันเพื่อการศึกษา และการปรับแก้โค้ด",
     role: "จัดทำเว็บแอปพลิเคชันและปรับแก้โค้ดให้มีประสิทธิภาพ",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
       "ภาพยนตร์สั้นเพื่อการศึกษาในหัวข้อการเชิญชวนท่องเที่ยวสวนราชพฤกษ์",
     video: "https://youtu.be/NSuTBz51dqo?si=L3RcDf36H01gznjg",
     category: "Short Educational Film",
-    tools: [],
+    tools: ["Capcut"],
     projectType: "Short Film",
     learning:
       "เรียนรู้การออกแบบ Storyboard การเขียนสคริปต์ และการทำงานร่วมกับผู้อื่น",
