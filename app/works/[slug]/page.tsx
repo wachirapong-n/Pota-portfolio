@@ -111,22 +111,22 @@ export default async function ProjectDetail({
         />
         <div className={`${container} relative`}>
           <ScrollReveal direction="left">
-          <Link
-            href="/works"
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[21px] font-medium text-slate-600 transition-colors hover:text-primary"
-          >
-            <ArrowLeft size={18} aria-hidden="true" /> กลับไปหน้าผลงาน
-          </Link>
-          <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold uppercase tracking-[.14em] text-primary shadow-sm">
-            <Sparkles size={18} aria-hidden="true" /> {project.category}
-          </div>
-          <h1 className="mb-4 max-w-[1080px] text-[clamp(36px,6vw,62px)] font-bold leading-tight tracking-[-.04em]">
-            <span className="mr-3 text-primary">{project.number} | </span>
-            {project.title}
-          </h1>
-          <p className="max-w-[880px] text-[22px] leading-8 text-muted md:text-2xl lg:text-xl">
-            {project.description}
-          </p>
+            <Link
+              href="/works"
+              className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-[21px] font-medium text-slate-600 transition-colors hover:text-primary"
+            >
+              <ArrowLeft size={18} aria-hidden="true" /> กลับไปหน้าผลงาน
+            </Link>
+            <div className="mb-4 flex w-fit items-center gap-2 rounded-full border border-primary/15 bg-white px-4 py-2 text-xl font-bold uppercase tracking-[.14em] text-primary shadow-sm">
+              <Sparkles size={18} aria-hidden="true" /> {project.category}
+            </div>
+            <h1 className="mb-4 max-w-[1080px] text-[clamp(36px,6vw,62px)] font-bold leading-tight tracking-[-.04em]">
+              <span className="mr-3 text-primary">{project.number} | </span>
+              {project.title}
+            </h1>
+            <p className="max-w-[880px] text-[22px] leading-8 text-muted md:text-2xl lg:text-xl">
+              {project.description}
+            </p>
           </ScrollReveal>
         </div>
       </section>
@@ -144,70 +144,80 @@ export default async function ProjectDetail({
           />
 
           {/* B — Project details */}
-          <ScrollReveal direction="right" className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-1">
-          <DetailCard icon={Layers3} title="รายละเอียดผลงาน" className="h-full">
-            <dl className="grid gap-3 text-[21px] leading-7">
-              <div className="flex items-start gap-2.5">
-                <Tag
-                  size={18}
-                  aria-hidden="true"
-                  className="mt-0.5 shrink-0 text-slate-500"
-                />
-                <div>
-                  <dt className="font-semibold text-ink">ประเภท</dt>
-                  <dd className="mt-0.5 text-muted">
-                    {project.category || "ยังไม่ได้ระบุ"}
-                  </dd>
+          <ScrollReveal
+            direction="right"
+            className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-1"
+          >
+            <DetailCard
+              icon={Layers3}
+              title="รายละเอียดผลงาน"
+              className="h-full"
+            >
+              <dl className="grid gap-3 text-[21px] leading-7">
+                <div className="flex items-start gap-2.5">
+                  <Tag
+                    size={18}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-slate-500"
+                  />
+                  <div>
+                    <dt className="font-semibold text-ink">ประเภท</dt>
+                    <dd className="mt-0.5 text-muted">
+                      {project.category || "ยังไม่ได้ระบุ"}
+                    </dd>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <Wrench
-                  size={18}
-                  aria-hidden="true"
-                  className="mt-0.5 shrink-0 text-slate-500"
-                />
-                <div>
-                  <dt className="font-semibold text-ink">เครื่องมือที่ใช้</dt>
-                  <dd className="mt-0.5 text-muted">
-                    {project.tools.length
-                      ? project.tools.join(", ")
-                      : "ยังไม่ได้ระบุ"}
-                  </dd>
+                <div className="flex items-start gap-2.5">
+                  <Wrench
+                    size={18}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-slate-500"
+                  />
+                  <div>
+                    <dt className="font-semibold text-ink">เครื่องมือที่ใช้</dt>
+                    <dd className="mt-0.5 text-muted">
+                      {project.tools.length
+                        ? project.tools.join(", ")
+                        : "ยังไม่ได้ระบุ"}
+                    </dd>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-2.5">
-                <Shapes
-                  size={18}
-                  aria-hidden="true"
-                  className="mt-0.5 shrink-0 text-slate-500"
-                />
-                <div>
-                  <dt className="font-semibold text-ink">รูปแบบ</dt>
-                  <dd className="mt-0.5 text-muted">
-                    {project.projectType || "ยังไม่ได้ระบุ"}
-                  </dd>
-                </div>
-              </div>
-            </dl>
-          </DetailCard>
+              </dl>
+            </DetailCard>
           </ScrollReveal>
 
           {/* C — My role */}
-          <ScrollReveal direction="right" delay={100} className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3">
-          <DetailCard icon={BriefcaseBusiness} title="บทบาทของฉัน" className="h-full">
-            <p className="m-0 text-[21px] leading-7 text-muted">
-              {project.role}
-            </p>
-          </DetailCard>
+          <ScrollReveal
+            direction="right"
+            delay={100}
+            className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-3"
+          >
+            <DetailCard
+              icon={BriefcaseBusiness}
+              title="บทบาทของฉัน"
+              className="h-full"
+            >
+              <p className="m-0 text-[21px] leading-7 text-muted">
+                {project.role}
+              </p>
+            </DetailCard>
           </ScrollReveal>
 
           {/* D — What I learned */}
-          <ScrollReveal direction="right" delay={200} className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5">
-          <DetailCard icon={Lightbulb} title="สิ่งที่ได้เรียนรู้" className="h-full">
-            <p className="m-0 text-[21px] leading-7 text-muted">
-              {project.learning}
-            </p>
-          </DetailCard>
+          <ScrollReveal
+            direction="right"
+            delay={200}
+            className="md:col-span-2 md:row-span-2 md:col-start-5 md:row-start-5"
+          >
+            <DetailCard
+              icon={Lightbulb}
+              title="สิ่งที่ได้เรียนรู้"
+              className="h-full"
+            >
+              <p className="m-0 text-[21px] leading-7 text-muted">
+                {project.learning}
+              </p>
+            </DetailCard>
           </ScrollReveal>
 
           {/* E — Open full image or video link */}
