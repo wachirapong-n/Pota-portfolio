@@ -190,8 +190,15 @@ export default function ProjectMediaGallery({
       {lightboxIndex !== null && hasImages && (
         <div
           role="presentation"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) closeLightbox();
+          onClick={(event) => {
+            const target = event.target;
+            if (
+              target === event.currentTarget ||
+              (target instanceof Element &&
+                !target.closest("button, img, [data-lightbox-counter]"))
+            ) {
+              closeLightbox();
+            }
           }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm sm:p-8"
         >
@@ -238,6 +245,7 @@ export default function ProjectMediaGallery({
                   <ChevronRight size={28} aria-hidden="true" />
                 </button>
                 <p
+                  data-lightbox-counter
                   className="pb-2 pt-4 text-[22px] text-white/80"
                   aria-live="polite"
                 >
