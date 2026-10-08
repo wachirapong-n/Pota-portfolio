@@ -96,7 +96,7 @@ export const projects: Project[] = [
       "/images/indy-sompoy-3.png",
     ],
     linkURL:
-      "https://gemini.google.com/share/0b0f2ac983fa?skid=5a94b871-5895-4951-889a-19034ecc1bf4",
+      "https://share.gemini.google/6JRfSzJ8iDGb",
   },
   {
     slug: "nathi-khong-noo",
