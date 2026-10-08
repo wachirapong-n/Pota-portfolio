@@ -21,7 +21,9 @@ export default function AboutPage() {
         />
         <div className="relative mx-auto grid w-full max-w-[1120px] items-center gap-12 px-6 md:grid-cols-[1fr_0.82fr] md:gap-16 max-sm:px-[18px]">
           <ScrollReveal direction="left">
-            <SectionLabel className="mb-5 uppercase">GET TO KNOW</SectionLabel>
+            <SectionLabel className="mb-5 uppercase" revealOnScroll>
+              GET TO KNOW
+            </SectionLabel>
             <h1 className="max-w-[650px] text-[clamp(38px,6vw,64px)] font-bold leading-[1.2] tracking-[-0.04em] text-ink">
               ABOUT
               <span className="mt-1  text-primary"> ME</span>
@@ -112,14 +114,20 @@ export default function AboutPage() {
         />
       </section>
       <section className="relative overflow-hidden bg-mist py-20 md:py-28">
-        <Image
-          src="/images/arrows/vector-curve.png"
-          alt=""
-          aria-hidden="true"
-          width={400}
-          height={400}
-          className="pointer-events-none absolute bottom-0 left-[-160px] z-0 hidden h-[400px] w-[400px] -scale-x-100 animate-arrow-reveal object-contain object-bottom motion-reduce:animate-none xl:block"
-        />
+        <ScrollReveal
+          direction="left"
+          clipReveal="left-to-right"
+          className="pointer-events-none absolute bottom-0 left-[-160px] z-0 hidden h-[400px] w-[400px] xl:block"
+        >
+          <Image
+            src="/images/arrows/vector-curve.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="400px"
+            className="-scale-x-100 object-contain object-bottom"
+          />
+        </ScrollReveal>
         <div className="relative z-10 mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
           <ScrollReveal direction="left">
             <div className="relative overflow-hidden rounded-[2rem] bg-ink px-7 py-10 text-white md:px-14 md:py-14">

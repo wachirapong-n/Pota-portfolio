@@ -22,14 +22,20 @@ function InterestSection({ title, items }: AboutGridProps) {
         style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
         aria-hidden="true"
       >
-        <Image
-          src="/images/arrows/vector3.png"
-          alt=""
-          aria-hidden="true"
-          width={400}
-          height={400}
-          className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 animate-arrow-reveal object-contain motion-reduce:animate-none"
-        />
+        <ScrollReveal
+          direction="left"
+          clipReveal="left-to-right"
+          className="absolute left-0 top-0 h-[400px] w-[400px]"
+        >
+          <Image
+            src="/images/arrows/vector3.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="400px"
+            className="-scale-y-100 object-contain"
+          />
+        </ScrollReveal>
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
@@ -42,25 +48,37 @@ function InterestSection({ title, items }: AboutGridProps) {
               {title}
             </h2>
           </div>
-          <Image
-            src="/images/arrows/vector2.png"
-            alt=""
-            aria-hidden="true"
-            width={85}
-            height={85}
-            className="ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 animate-arrow-reveal-reverse object-contain motion-reduce:animate-none md:block xl:hidden"
-          />
+          <ScrollReveal
+            direction="right"
+            clipReveal="right-to-left"
+            className="relative ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 md:block xl:hidden"
+          >
+            <Image
+              src="/images/arrows/vector2.png"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="85px"
+              className="object-contain"
+            />
+          </ScrollReveal>
         </header>
 
         <div className="-mt-5 mb-3 flex justify-start pl-3 md:hidden">
-          <Image
-            src="/images/arrows/vector1.png"
-            alt=""
-            aria-hidden="true"
-            width={72}
-            height={72}
-            className="h-[72px] w-[72px] animate-arrow-reveal object-contain motion-reduce:animate-none"
-          />
+          <ScrollReveal
+            direction="left"
+            clipReveal="left-to-right"
+            className="relative h-[72px] w-[72px]"
+          >
+            <Image
+              src="/images/arrows/vector1.png"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="72px"
+              className="object-contain"
+            />
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">

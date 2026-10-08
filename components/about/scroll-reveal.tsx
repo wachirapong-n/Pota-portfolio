@@ -7,6 +7,7 @@ type ScrollRevealProps = {
   direction?: "left" | "right" | "up";
   delay?: 0 | 100 | 200;
   className?: string;
+  clipReveal?: "left-to-right" | "right-to-left";
 };
 
 const delayClasses = {
@@ -20,6 +21,7 @@ export default function ScrollReveal({
   direction = "up",
   delay = 0,
   className = "",
+  clipReveal,
 }: ScrollRevealProps) {
   const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -55,13 +57,19 @@ export default function ScrollReveal({
     right: "translate-x-8",
     up: "translate-y-6",
   }[direction];
+  const clipRevealClass =
+    clipReveal === "left-to-right"
+      ? "animate-arrow-reveal"
+      : clipReveal === "right-to-left"
+        ? "animate-arrow-reveal-reverse"
+        : "";
 
   return (
     <div
       ref={elementRef}
       className={`${className} transform transition-all duration-700 ease-out ${delayClasses[delay]} motion-reduce:transform-none motion-reduce:transition-none ${
         isVisible
-          ? "translate-x-0 translate-y-0 opacity-100"
+          ? `translate-x-0 translate-y-0 opacity-100 ${clipRevealClass} ${clipReveal ? "motion-reduce:animate-none" : ""}`
           : `opacity-0 ${initialPosition}`
       }`}
     >

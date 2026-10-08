@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, User, Layers3, Mail, Heart } from "lucide-react";
 import { profile } from "@/data/profile";
-import { previewProjects, projects } from "@/data/projects";
+import { previewProjects } from "@/data/projects";
 import { ProjectCard } from "@/components/works/project-card";
 import Image from "next/image";
 import ScrollReveal from "@/components/about/scroll-reveal";
@@ -51,7 +51,7 @@ export default function Home() {
           className={`${container} relative grid min-h-[570px] grid-cols-[1.15fr_.85fr] items-center gap-[60px] py-[76px] max-md:grid-cols-1 max-md:gap-12 max-md:py-14`}
         >
           <ScrollReveal direction="left">
-            <SectionLabel>WELCOME</SectionLabel>
+            <SectionLabel revealOnScroll>WELCOME</SectionLabel>
             <h1 className="mt-6 text-[clamp(42px,7vw,76px)] font-bold leading-[1.1] tracking-[-.055em]">
               E-Portfolio
               <br />
@@ -106,14 +106,20 @@ export default function Home() {
           style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
           aria-hidden="true"
         >
-          <Image
-            src="/images/arrows/vector3.png"
-            alt=""
-            aria-hidden="true"
-            width={400}
-            height={400}
-            className="absolute left-0 top-0 h-[400px] w-[400px] -scale-y-100 animate-arrow-reveal object-contain motion-reduce:animate-none"
+          <ScrollReveal
+            direction="left"
+            clipReveal="left-to-right"
+            className="absolute left-0 top-0 h-[400px] w-[400px]"
+          >
+            <Image
+              src="/images/arrows/vector3.png"
+              alt=""
+              aria-hidden="true"
+              fill
+              sizes="400px"
+              className="-scale-y-100 object-contain"
             />
+          </ScrollReveal>
           </div>
         <div className={container}>
           <ScrollReveal
@@ -124,24 +130,37 @@ export default function Home() {
               <p className={eyebrow}>EXPLORE MY PORTFOLIO</p>
               <h2 className={title}>เลือกดูเรื่องที่สนใจ</h2>
             </div>
-            <Image
-              src="/images/arrows/vector2.png"
-              alt=""
-              aria-hidden="true"
-              width={85}
-              height={85}
-              className="ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 animate-arrow-reveal-reverse object-contain motion-reduce:animate-none md:block xl:hidden"
-            />
+            <ScrollReveal
+              direction="right"
+              delay={100}
+              clipReveal="right-to-left"
+              className="relative ml-auto hidden h-[clamp(48px,8vw,85px)] w-[clamp(48px,8vw,85px)] shrink-0 md:block xl:hidden"
+            >
+              <Image
+                src="/images/arrows/vector2.png"
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="85px"
+                className="object-contain"
+              />
+            </ScrollReveal>
           </ScrollReveal>
           <div className="-mt-5 mb-3 flex justify-start pl-3 md:hidden">
-            <Image
-              src="/images/arrows/vector1.png"
-              alt=""
-              aria-hidden="true"
-              width={72}
-              height={72}
-              className="h-[72px] w-[72px] animate-arrow-reveal object-contain motion-reduce:animate-none"
-            />
+            <ScrollReveal
+              direction="left"
+              clipReveal="left-to-right"
+              className="relative h-[72px] w-[72px]"
+            >
+              <Image
+                src="/images/arrows/vector1.png"
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="72px"
+                className="object-contain"
+              />
+            </ScrollReveal>
           </div>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
             {paths.map(
@@ -195,14 +214,20 @@ export default function Home() {
       </section>
 
       <section className="relative overflow-hidden bg-mist py-[76px]">
-        <Image
-          src="/images/arrows/vector-curve.png"
-          alt=""
-          aria-hidden="true"
-          width={400}
-          height={400}
-          className="pointer-events-none absolute bottom-0 right-[-160px] z-0 hidden h-[400px] w-[400px] animate-curve-reveal object-contain object-bottom motion-reduce:animate-none xl:block"
-        />
+        <ScrollReveal
+          direction="right"
+          clipReveal="right-to-left"
+          className="pointer-events-none absolute bottom-0 right-[-160px] z-0 hidden h-[400px] w-[400px] xl:block"
+        >
+          <Image
+            src="/images/arrows/vector-curve.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="400px"
+            className="object-contain object-bottom"
+          />
+        </ScrollReveal>
         <div className={`${container} relative z-10`}>
           <ScrollReveal
             direction="right"
