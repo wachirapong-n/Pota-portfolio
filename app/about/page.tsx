@@ -119,7 +119,7 @@ export default function AboutPage() {
         <ScrollReveal
           direction="left"
           clipReveal="left-to-right"
-          className="pointer-events-none absolute bottom-0 left-[-160px] z-0 hidden h-[400px] w-[400px] xl:block"
+          className="pointer-events-none absolute bottom-0 right-[-160px] z-0 hidden h-[400px] w-[400px] xl:block"
         >
           <Image
             src="/images/arrows/vector-curve.png"
@@ -127,7 +127,7 @@ export default function AboutPage() {
             aria-hidden="true"
             fill
             sizes="400px"
-            className="-scale-x-100 object-contain object-bottom"
+            className="object-contain object-bottom"
           />
         </ScrollReveal>
         <div className="relative z-10 mx-auto w-full max-w-[1120px] px-6 max-sm:px-[18px]">
