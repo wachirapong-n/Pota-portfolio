@@ -58,21 +58,13 @@ export default function Home() {
               <span className="text-primary">{profile.name}</span>
             </h1>
 
-            <p className="mt-5 max-w-[560px] text-[22px] leading-8 text-muted md:text-2xl">
+            <p className="mt-5 max-w-[560px] text-[22px] leading-8 text-muted md:text-2xl max-md:max-w-full">
               {profile.bio}
             </p>
 
-            <p className="mt-3 max-w-[560px] text-[22px] leading-8 text-muted md:text-2xl">
+            <p className="mt-3 max-w-[560px] text-[22px] leading-8 text-muted md:text-2xl max-md:max-w-full">
               {profile.bio2}
             </p>
-            <div className="mt-8 flex max-w-[560px] items-center gap-3 rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm">
-              <span className="mt-0.5 grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Heart size={30} aria-hidden="true" />
-              </span>
-              <p className="flex-1 text-center text-[22px] leading-7 text-ink md:text-2xl">
-                &ldquo;{profile.objective}&rdquo;
-              </p>
-            </div>
           </ScrollReveal>
           <ScrollReveal
             direction="right"
@@ -97,12 +89,26 @@ export default function Home() {
               </div>
             </div>
           </ScrollReveal>
+          <ScrollReveal
+            direction="up"
+            delay={200}
+            className="w-full md:col-span-2"
+          >
+            <div className="flex w-full items-center gap-3 rounded-2xl border border-primary/10 bg-white/80 p-5 shadow-sm">
+              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                <Heart size={30} aria-hidden="true" />
+              </span>
+              <p className="max-w-full flex-1 text-center text-[22px] leading-7 text-ink md:text-2xl">
+                &ldquo;{profile.objective}&rdquo;
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="relative py-[100px] max-md:py-[72px]">
         <div
-          className="pointer-events-none absolute left-0 top-[150px] z-10 hidden h-[400px] overflow-hidden xl:block"
+          className="pointer-events-none absolute left-0 top-[150px] z-0 hidden h-[400px] overflow-hidden xl:block"
           style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
           aria-hidden="true"
         >
@@ -111,17 +117,19 @@ export default function Home() {
             clipReveal="left-to-right"
             className="absolute left-0 top-0 h-[400px] w-[400px]"
           >
-            <Image
-              src="/images/arrows/vector3.png"
-              alt=""
-              aria-hidden="true"
-              fill
-              sizes="400px"
-              className="-scale-y-100 object-contain"
-            />
+            <div className="absolute left-0 top-0 h-[clamp(160px,calc(75vw_-_804px),400px)] w-[clamp(160px,calc(75vw_-_804px),400px)]">
+              <Image
+                src="/images/arrows/vector3.png"
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="(max-width: 1610px) 75vw, 400px"
+                className="-scale-y-100 object-contain"
+              />
+            </div>
           </ScrollReveal>
         </div>
-        <div className={container}>
+        <div className={`${container} relative z-10`}>
           <ScrollReveal
             direction="left"
             className="mb-9 flex items-end justify-between gap-6 max-sm:items-start"
