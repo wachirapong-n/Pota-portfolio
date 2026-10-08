@@ -8,7 +8,6 @@ import {
   BriefcaseBusiness,
   Layers3,
   Lightbulb,
-  Shapes,
   Tag,
   Wrench,
 } from "lucide-react";
