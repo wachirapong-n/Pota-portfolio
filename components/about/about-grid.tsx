@@ -25,7 +25,7 @@ function InterestSection({ title, items }: AboutGridProps) {
         <ScrollReveal
           direction="left"
           clipReveal="left-to-right"
-          className="absolute left-0 top-0 h-[400px] w-[400px]"
+          className="absolute left-0 top-0 h-[clamp(100px,calc(58vw_-_644px),400px)] w-[clamp(100px,calc(58vw_-_644px),400px)]"
         >
           <Image
             src="/images/arrows/vector3.png"

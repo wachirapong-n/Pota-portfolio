@@ -115,15 +115,15 @@ export default function Home() {
           <ScrollReveal
             direction="left"
             clipReveal="left-to-right"
-            className="absolute left-0 top-0 h-[400px] w-[400px]"
+            className="absolute left-0 top-0 h-[clamp(100px,calc(58vw_-_644px),400px)] w-[clamp(100px,calc(58vw_-_644px),400px)]"
           >
-            <div className="absolute left-0 top-0 h-[clamp(160px,calc(75vw_-_804px),400px)] w-[clamp(160px,calc(75vw_-_804px),400px)]">
+            <div className="absolute left-0 top-0 h-full w-full">
               <Image
                 src="/images/arrows/vector3.png"
                 alt=""
                 aria-hidden="true"
                 fill
-                sizes="(max-width: 1610px) 75vw, 400px"
+                sizes="(max-width: 1800px) calc(58vw - 644px), 400px"
                 className="-scale-y-100 object-contain"
               />
             </div>
