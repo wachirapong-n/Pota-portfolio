@@ -18,7 +18,7 @@ export default function ContactPage() {
       <section className="bg-mist py-[76px] max-md:pt-[54px]">
         <div className={container}>
           <ScrollReveal direction="left">
-            <SectionLabel className="mb-5 uppercase">Start a conversation</SectionLabel>
+            <SectionLabel className="mb-5 uppercase">Send Message</SectionLabel>
             <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold tracking-[-.05em]">
               Contact <span className="mt-1  text-primary"> Me</span>
             </h1>
@@ -48,9 +48,6 @@ export default function ContactPage() {
             />
           </ScrollReveal>
           <ScrollReveal direction="right">
-            <div className="mb-3 text-[20px] font-bold uppercase tracking-[.16em] text-primary">
-              Send a note
-            </div>
             <h2 className="mt-3 mb-6 text-[32px] font-bold tracking-tight">
               แบบฟอร์มติดต่อ
             </h2>
