@@ -101,8 +101,8 @@ export default function Home() {
       </section>
 
       <section className="relative py-[100px] max-md:py-[72px]">
-          <div
-            className="pointer-events-none absolute left-0 top-[150px] z-10 hidden h-[400px] overflow-hidden xl:block"
+        <div
+          className="pointer-events-none absolute left-0 top-[150px] z-10 hidden h-[400px] overflow-hidden xl:block"
           style={{ width: "calc((100vw - 1120px) / 2 + 24px)" }}
           aria-hidden="true"
         >
@@ -120,7 +120,7 @@ export default function Home() {
               className="-scale-y-100 object-contain"
             />
           </ScrollReveal>
-          </div>
+        </div>
         <div className={container}>
           <ScrollReveal
             direction="left"
@@ -231,15 +231,15 @@ export default function Home() {
         <div className={`${container} relative z-10`}>
           <ScrollReveal
             direction="right"
-            className="mb-7 flex items-end justify-between gap-5"
+            className="mb-7 flex items-end justify-between gap-5 max-[360px]:flex-col max-[360px]:items-start max-[360px]:gap-2"
           >
             <div>
-              <p className={eyebrow}>MY WORKS</p>
+              <p className={eyebrow}>MY WORK</p>
               <h2 className={`${title} mb-0`}>ผลงานของฉัน</h2>
             </div>
             <Link
               href="/works"
-              className="relative mb-1 inline-flex w-fit items-center gap-2 py-1 text-[21px] font-bold text-primary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:content-[''] motion-reduce:after:transition-none hover:after:scale-x-100"
+              className="relative mb-1 inline-flex w-fit items-center gap-2 py-1 text-[21px] font-bold text-primary after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:content-[''] motion-reduce:after:transition-none hover:after:scale-x-100 max-[360px]:mb-0"
             >
               ดูผลงานทั้งหมด <ArrowRight size={18} />
             </Link>

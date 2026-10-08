@@ -22,7 +22,7 @@ export default function WorksPage() {
           <ScrollReveal direction="left">
             <SectionLabel className="mb-5">SELECTED WORK</SectionLabel>
             <h1 className="mt-3 mb-4 text-[clamp(40px,6vw,62px)] font-bold leading-tight tracking-[-.05em]">
-              My <span className="mt-1  text-primary"> Works</span>
+              My <span className="mt-1  text-primary"> Work</span>
             </h1>
             <p className="max-w-[650px] text-[22px] leading-8 text-muted md:text-2xl">
               รวบรวมผลงานที่ได้เรียนรู้และสร้างสรรค์ตลอดการศึกษาเพื่อพัฒนาทักษะและต่อยอดสู่อนาคต
